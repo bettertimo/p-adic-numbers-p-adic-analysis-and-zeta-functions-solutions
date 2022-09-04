@@ -4,7 +4,7 @@
 
 \chapter{\texorpdfstring{$p$}{p}-adic numbers}
 
-\section*{pp. 6-8}
+\section*{\S2 (pp. 6-8)}
 
 \subsection*{Exercise 1.1}
 
@@ -155,7 +155,23 @@ By construction, we obtain a descending chain $\{a_n\}\supset\Acal_1\supset\Acal
 
 Write $x=\pm p_1^{\alpha_1}\cdots p_k^{\alpha_k}$ where $\alpha_i\in\ZZ\setminus\{0\}$. For each $i$, we have by assumption that $|x|_{p_i} = 1/p_i^{\alpha_i} \leq 1$. This means $\alpha_i \geq 0$ for all $i$ and hence $x\in\ZZ$.
 
-\section*{pp. 19-20}
+\subsection*{Bonus 1.1}
+
+We show that $\QQ_p$ is complete. (This was left as an exercise in p. 11.) Let $\{a_j\}_{j=1}^\infty$ be a sequence of equivalence classes which is Cauchy in $\QQ_p$. For each $j$, take a representative Cauchy sequence $\{a_{ji}\}_{i=1}^\infty$ of $a_j$ in $\QQ$, where $|a_{ji}-a_{ji'}|<p^{-j}$ if $i,i'\geq N_j$. WLOG, we assume $\{N_j\}$ is strictly increasing.
+
+We first claim that $\{a_{jN_j}\}_{j=1}^\infty$ is Cauchy in $\QQ$. Given $\epsilon>0$, take $M\in\NN$ s.t. $p^{-M}<\epsilon$. Since $\{a_j\}$ is Cauchy in $\QQ_p$, choose $j_\epsilon\in\NN$ s.t. $|a_j-a_{j'}|_p := \lim_{i\to\infty} |a_{ji}-a_{j'i}|_p < \epsilon$ if $j,j'\geq j_\epsilon$. And take $i_\epsilon\in\NN$ s.t. for $i\geq i_\epsilon$, we have $|a_{ji}-a_{j'i}|_p <\epsilon$.
+
+Let $N := \max\{M,j_\epsilon,i_\epsilon\}$. Then if $j>j'\geq N$, we have
+\begin{align*}
+|a_{jN_j}-a_{j'N_{j'}}|_p \leq \max\{|a_{jN_j}-a_{j'N_j}|_p,|a_{j'N_j}-a_{j'N_{j'}}|_p\} < \max\{\epsilon,p^{-j'}\} = \epsilon
+\end{align*}
+The second inequality holds because $N_j \geq j > N$, and $N_j>N_{j'}$ by our assumption.
+
+Since $\{a_{jN_j}\}$ is Cauchy in $\QQ$, we let $a\in\QQ_p$ be the equivalence class in which $\{a_{jN_j}\}\in a$. We claim that $\lim_{j\to\infty} a_j=a$, or equivalently, $$\lim_{j\to\infty} |a_j-a|_p = \lim_{j\to\infty}\lim_{i\to\infty} |a_{ji}-a_{iN_i}|_p = 0$$
+
+Given $\epsilon>0$, take $M'\in\NN$ s.t. $p^{-M'}<\epsilon$. Since $\{a_{jN_j}\}$ is Cauchy in $\QQ$, choose $j_\epsilon'\in\NN$ s.t. for $i,j\geq j_\epsilon'$, we have $|a_{iN_i}-a_{jN_j}|_p<\epsilon$. Let $N':=\max\{M',j_\epsilon'\}$. Then if $j\geq N'$, we have $|a_{ji}-a_{iN_i}|_p \leq \max\{|a_{ji}-a_{jN_j}|_p,|a_{jN_j}-a_{iN_i}|_p\}$ by the non-Archimedean property, so $$\lim_{i\to\infty}|a_{ji}-a_{iN_i}|_p \leq \lim_{i\to\infty}\max\{|a_{ji}-a_{jN_j}|_p,|a_{jN_j}-a_{iN_i}|_p\} < \max\{p^{-j},\epsilon\} = \epsilon$$ This completes the proof.
+
+\section*{\S5 (pp. 19-20)}
 
 \subsection*{Exercise 1.1}
 We may assume $a_{-m}\neq0$. Since $1\leq a_m \leq p-1$ and $0\leq a_i \leq p-1$ for each $i\geq-m+1$, so
@@ -232,7 +248,7 @@ Suppose this property holds for $i=k-1$, i.e., $-b'\leq\alpha_{k-1}\leq a'$. Not
 
 \subsection*{Exercise 1.6}
 
-We imitate the proof of basic version of Hensel's lemma (p. 16), i.e., we show that there exists $\{a_n\}_{n=1}^\infty\subset\ZZ$ s.t. for all $n$, we have (1) $F(a_n)\equiv0 \pmod{p^{2M+1+n}}$ (2) $a_n\equiv a_{n-1} \pmod{p^{M+n}}$ and (3) $0\leq a_n < p^{M+1+n}$. (See \nameref{Bonus 1.1} for the analog proof of Newton's method.)
+We imitate the proof of basic version of Hensel's lemma (p. 16), i.e., we show that there exists $\{a_n\}_{n=1}^\infty\subset\ZZ$ s.t. for all $n$, we have (1) $F(a_n)\equiv0 \pmod{p^{2M+1+n}}$ (2) $a_n\equiv a_{n-1} \pmod{p^{M+n}}$ and (3) $0\leq a_n < p^{M+1+n}$. (See \nameref{Bonus 1.2} for the analog proof of Newton's method.)
 
 Set $\tilde{a}:=\tilde{a_0}+\tilde{a_1}p+\cdots+\tilde{a_M}p^M$ and $a_0 := \tilde{a} + p^{M+1}A$ where $A\in\ZZ_p$ and $0\leq\tilde{a_i}\leq p-1$. Note that the desired property $a\equiv a_0 \pmod{p^{M+1}}$ forces $a=\tilde{a}+b_1p^{M+1}\cdots$. Write $F(x)=\sum c_ix^i$. We apply induction on $n$. When $n=1$, (2) and (3) imply $a_1=\tilde{a}+b_1p^{M+1}$ where $0\leq b_1 \leq p-1$. And (1) implies
 \begin{align*}
@@ -336,7 +352,7 @@ Let $\alpha\in\ZZ_p^\times$. We claim that $\alpha$ is a square in $\ZZ_p$ iff $
 
 If $|\alpha|_p\neq1$, write $\alpha=a_{-m}p^{-m}+a_{-m+1}p^{-m+1}+\cdots$ where $a_{-m}\neq0$ and $m\in\ZZ\setminus\{0\}$. First observe that if $\alpha=\beta^2$ is a square, then $-m=\ord_p(\alpha)=2\ord_p(\beta)$. So if $\ord_p(\alpha)=-m$ is odd, then $\alpha$ is not a square.
 
-Suppose we know $\ord_p(\alpha)$ is even. Then consider $p^m\alpha = a_{-m}+a_{-m+1}p+\cdots\in\ZZ_p^\times$. Now, apply the criterion for numbers in $\ZZ_p^\times$, we have that $p^m\alpha$ is a square in $\ZZ_p$ iff $a_{-m}$ is a square modulo $p$, i.e., $(a_{-m}/p)=1$. On the other hand, observe that $p^m\alpha$ is a square in $\ZZ_p$ is also equivalent to say $\alpha$ is a square in $\QQ_p$.
+Suppose we know $\ord_p(\alpha)$ is even. Consider $p^m\alpha = a_{-m}+a_{-m+1}p+\cdots\in\ZZ_p^\times$. Now, apply the criterion for numbers in $\ZZ_p^\times$, we have that $p^m\alpha$ is a square in $\ZZ_p$ iff $a_{-m}$ is a square modulo $p$, i.e., $(a_{-m}/p)=1$. On the other hand, observe that $p^m\alpha$ is a square in $\ZZ_p$ is also equivalent to say $\alpha$ is a square in $\QQ_p$.
 
 In conclusion, the criterion is as follows: Write $\alpha=a_{-m}p^{-m}+a_{-m+1}p^{-m+1}+\cdots$. If $m$ is odd, then $\alpha$ cannot be a square. Otherwise, we have $\alpha$ is a square in $\QQ_p$ iff $(a_{-m}/p)=1$.
 
@@ -369,9 +385,9 @@ $$
 x^2-\alpha \equiv x^2-1 \equiv0 \pmod{2^3} \\
 \end{cases*}
 $$
-Clearly $a=1$ works. So By Ex 1.6, $\exists x_0\in\ZZ_2$ s.t. $F(x_0)=0$, i.e., $\alpha=x_0^2$.
+Clearly $a=1$ works. So by Ex 1.6, $\exists x_0\in\ZZ_2$ s.t. $F(x_0)=0$, i.e., $\alpha=x_0^2$.
 
-If $|\alpha|_2\neq 1$, then the analysis is similar to Ex 1.11. If $\ord_2(\alpha)$ is odd, then $\alpha$ is not a square. Suppose we know $\ord_2(\alpha)$ is even. Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$ where $a_i\in\{0,1\}$. Consider $2^m\alpha =1+a_{-m+1}\cdot2+\cdots \in\ZZ_2^\times$. Now, apply the criterion for numbers in $\ZZ_2^\times$, we have that $2^m\alpha$ is a square in $\ZZ_2$ iff $2^m\alpha\equiv 1 \pmod{2^3}$, or equivalently, $a_{-m+1}+a_{-m+2}\cdot2\equiv0\pmod{2^2} \iff a_{-m+1}=a_{-m+2}=0$. On the other hand, observe that $2^m\alpha$ is a square in $\ZZ_2$ is also equivalent to say $\alpha$ is a square in $\QQ_2$.
+If $|\alpha|_2\neq 1$, then the analysis is similar to Ex 1.11. If $\ord_2(\alpha)$ is odd, then $\alpha$ is not a square. Suppose we know $\ord_2(\alpha)$ is even. Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$ where $a_i\in\{0,1\}$. Consider $2^m\alpha =1+a_{-m+1}\cdot2+\cdots \in\ZZ_2^\times$. Now, apply the criterion for numbers in $\ZZ_2^\times$, we have that $2^m\alpha$ is a square in $\ZZ_2$ iff $2^m\alpha\equiv 1 \pmod{2^3}$, or equivalently, $a_{-m+1}=a_{-m+2}=0$. On the other hand, observe that $2^m\alpha$ is a square in $\ZZ_2$ is also equivalent to say $\alpha$ is a square in $\QQ_2$.
 
 In conclusion, the criterion is as follows: Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$. If $m$ is odd, then $\alpha$ cannot be a square. Otherwise, we have $\alpha$ is a square in $\QQ_2$ iff $a_{-m+1}=a_{-m+2}=0$.
 
@@ -398,23 +414,27 @@ The idea is that we manipulate $\alpha$ to make its order even, and the second a
 
 \subsection*{Exercise 1.13}
 
-Recall that the fourth roots of one form a cyclic group generated by the complex numbers $\pm\sqrt{-1}$. So in order to find their $5$-adic expansions, we first find the $5$-adic expansions of $\pm\sqrt{-1}$, and generate the other three. More precisely, the $5$-adic expansions of $\pm\sqrt{-1}$ has already been found in Ex 1.9. $\pm\sqrt{-1}=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots$ and $3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots$. We pick the former one to be the generator, denoted by $x$. So the 4 fourth roots of one are
+Recall that the set of fourth roots of one forms a cyclic group generated by the complex numbers $\pm\sqrt{-1}$. So in order to find their $5$-adic expansions, we first find the $5$-adic expansions of $\pm\sqrt{-1}$, and generate the other three. More precisely, the $5$-adic expansions of $\pm\sqrt{-1}$ has already been found in Ex 1.9. $\pm\sqrt{-1}=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots$ and $3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots$. We pick the former one to be the generator, denoted by $x$. Then the 4 fourth roots of one are
 \begin{alignat*}{2}
 x&=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots &\qquad
-x^2&=4+4\cdot5+4\cdot5^2+4\cdot5^3+\cdots \\
+x^2&=4+4\cdot5+4\cdot5^2+4\cdot5^3+\cdots = -1\\
 x^3&=3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots &\qquad
-x^4&=1+0\cdot5+0\cdot5^2+0\cdot5^3+\cdots
+x^4&=1+0\cdot5+0\cdot5^2+0\cdot5^3+\cdots = 1
 \end{alignat*}
 
-Let $F(x):=x^p-x\in\ZZ_p[x]$. We see that the numbers $0,1,2,\ldots,p-1$ all satisfy $F(x)\equiv0\pmod{p}$ by Fermat's little theorem and $F'(x)\equiv-1\not\equiv0\pmod{p}$. So by Hensel's lemma (p. 16), $\exu a_i\in\ZZ_p$ s.t. $F(a_i)=0$ and $a_i\equiv i\pmod{p}$, $i=0,1,\ldots,p-1$.
+Let $F(x):=x^p-x\in\ZZ_p[x]$. We see that the numbers $0,1,2,\ldots,p-1\in\ZZ_p$ all satisfy $F(x)\equiv0\pmod{p}$ by Fermat's little theorem and $F'(x)\equiv-1\not\equiv0\pmod{p}$. So by Hensel's lemma (p. 16), $\exu a_i\in\ZZ_p$ s.t. $F(a_i)=0$ and $a_i\equiv i\pmod{p}$, $i=0,1,\ldots,p-1$.
 
 \subsection*{Exercise 1.14}
 
 \subsection*{Exercise 1.15}
 
+Assume $p>2$. It's sufficient to show that $f(x):=(x^p-1)/(x-1)$ is irreducible in $\QQ_p[x]$. To apply Eisenstein's criterion, we consider $$g(x):=f(x+1)=\frac{(x+1)^p-1}{x}=x^{p-1}+\binom{p}{1}x^{p-2}+\cdots+\binom{p}{p-2}x+\binom{p}{p-1}$$
+
+Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1\not\equiv 0\pmod{p}$ and (3) $\binom{p}{p-1}=p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Ex 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. Consequently, so is $f(x)$. (Otherwise, if $f(x)=f_1(x)f_2(x)$ is reducible, where $1\leq \deg f_1(x),\deg f_2(x) < \deg f(x)$, then so is $g(x)=f(x+1)=f_1(x+1)f_2(x+1)$, which is absurd.)
+
 \subsection*{Exercise 1.16}
 
-From page 14 we know that a series converges in $\QQ_p$ iff its terms approach zero. Let $a_n:=p^n$, then $|a_n|_p=1/p^n\to0$ as $n\to\infty$. So $\sum a_n=1+p+p^2+\cdots$ converges to $1/(1-p)$.
+Recall that a $p$-adic series converges in $\QQ_p$ iff its terms approach zero (see p. 14). Let $a_n:=p^n$, then $|a_n|_p=1/p^n\to0$ as $n\to\infty$. So $\sum a_n=1+p+p^2+\cdots$ converges to $1/(1-p)$.
 
 Let $b_n:=(-1)^np^n$, then $|b_n|_p=1/p^n\to0$ as $n\to\infty$. So $\sum b_n=1-p+p^2-p^3+\cdots$ converges to $1/(1-(-p))=1/(1+p)$.
 
@@ -424,9 +444,27 @@ Let $c_n:=p^{2n}+(p-1)p^{2n+1}=p^{2n}(p^2-p+1)$, then $|c_n|_p=1/p^{2n}\to0$ as 
 
 \subsection*{Exercise 1.18}
 
+For positive $n$, we consider $F(x):=x^n-\alpha\in\ZZ_p[x]$ and show that $F(x)$ has a root in $\ZZ_p$. Put $a_0=1$, then $F(a_0)=1-\alpha\equiv 0\pmod{p}$ and $F'(a_0)=n\not\equiv 0\pmod{p}$. So by Hensel's lemma (p. 16), $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
+
+For negative $n$, we consider $F(x):=\alpha x^{-n}-1\in\ZZ_p[x]$ and show that $F(x)$ has a root in $\ZZ_p$. Put $a_0=1$, then $F(a_0)=\alpha-1\equiv 0\pmod{p}$ and $F'(a_0)=-n\alpha\not\equiv 0\pmod{p}$. So by Hensel's lemma again, $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
+
+Now, suppose $n=p$. Set $\alpha=1+p\equiv1\pmod{p}$. We claim that $x^p-\alpha$ has no solutions in $\QQ_p$, or equivalently, $f(x):=x^p-\alpha$ is irreducible in $\QQ_p[x]$. Using the same idea as in Ex 1.15, we consider $$g(x):=f(x+1)=(x+1)^p-\alpha = x^p+\binom{p}{1}x^{p-1}+\cdots+\binom{p}{p-1}x+1-\alpha$$
+
+Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1-\alpha\equiv 0\pmod{p}$ (3) $1\not\equiv 0\pmod{p}$ and (4) $1-\alpha=-p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Ex 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. And hence, so is $f(x)$.
+
+Finally, suppose $\alpha\equiv1\pmod{p^2}$ and $p\neq2$. We claim that $F(x):=x^p-\alpha$ has a solution in $\QQ_p$. Take $M=1$ in Ex 1.6, this means we need to solve
+$$
+\begin{cases*}
+px^{p-1} \equiv0\pmod{p} \\
+px^{p-1} \not\equiv0\pmod{p^2} \\
+x^p-\alpha \equiv0 \pmod{p^3} \\
+\end{cases*}
+$$
+Write $\alpha=1+0\cdot p+a_2p^2+\cdots$. Then it's easy to check that $a_0:=1+a_2p\in\ZZ_p$ works. (One may observe that $\alpha\equiv 1+a_2p^2\pmod{p^3}$.) So By Ex 1.6, $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
+
 \subsection*{Exercise 1.19}
 
-Induction on $M$. When $M=1$, we have $\alpha^p\equiv\alpha\pmod{p}$ by Fermat's little theorem. Suppose now $\alpha^{p^M}\equiv\alpha^{p^{M-1}} \pmod{p^M}$. We want to show that $\alpha^{p^{M+1}}\equiv\alpha^{p^M} \pmod{p^{M+1}}$. Consider
+Induction on $M$. When $M=1$, we have $\alpha^p\equiv\alpha\pmod{p}$ by Fermat's little theorem. Suppose now $\alpha^{p^M}\equiv\alpha^{p^{M-1}} \pmod{p^M}$, we want to show that $\alpha^{p^{M+1}}\equiv\alpha^{p^M} \pmod{p^{M+1}}$. Consider
 \begin{align*}
 \alpha^{p^{M+1}}-\alpha^{p^M} &= \left(\alpha^{p^M}\right)^p - \left(\alpha^{p^{M-1}}\right)^p \\
 &= \left(\alpha^{p^M}-\alpha^{p^{M-1}}\right)\cdot \left(\sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i\right)
@@ -436,22 +474,22 @@ We know $p^M\mid\alpha^{p^M}-\alpha^{p^{M-1}}$ by the induction hypothesis. So i
 \sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i \equiv \sum_{i=0}^{p-1} \alpha^{p-1-i}\cdot\alpha^i = \sum_{i=0}^{p-1} \alpha^{p-1} = p\alpha^{p-1} \equiv 0 \pmod{p}
 \end{align*}
 
-We next show that $a_M:=\alpha^{p^M}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $1/p^N<\epsilon$. If $n>m\geq N$, we have
+We next show that $\{a_M\}_{M=1}^\infty:=\{\alpha^{p^M}\}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $1/p^N<\epsilon$. If $n>m\geq N$, we have
 \begin{align*}
 \left|\alpha^{p^n}-\alpha^{p^m}\right|_p &\leq \max\left\{ \left|\alpha^{p^n}-\alpha^{p^{n-1}}\right|_p,\ldots,\left|\alpha^{p^{m+1}}-\alpha^{p^m}\right|_p \right\} \\
 &\leq \max \left\{ \frac{1}{p^n},\ldots,\frac{1}{p^{m+1}} \right\} = \frac{1}{p^{m+1}} < \frac{1}{p^N} <\epsilon
 \end{align*}
-Since $\QQ_p$ is complete, so we know $a_M$ converges. Set $a:=\lim_{M\to\infty} a_M$.
+Since $\QQ_p$ is complete, so the sequence $\{a_M\}$ converges to a limit, say $a$, in $\QQ_p$.
 
-Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$. (See Ex 1.13.) From $a_M = a_{M-1}^p \equiv a_M \pmod{p^M}$, we have $|a_{M-1}^p-a_M|_p\leq 1/p^M$. Let $M\to\infty$, we obtain $|a^p-a|_p\leq 0$. And this implies $a^p=a$. Moreover, from $a_M\equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Let $M\to\infty$, we obtain $|a-\alpha|_p\leq 1/p$. And this implies $a\equiv\alpha\pmod{p}$.
+Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$. (See Ex 1.13.) From $a_{M-1}^p = (\alpha^{p^{M-1}})^p= \alpha^{p^M} \equiv \alpha^{p^{M-1}} = a_{M-1} \pmod{p^M}$, we have $|a_{M-1}^p-a_{M-1}|_p\leq 1/p^M$. Let $M\to\infty$, we obtain $|a^p-a|_p\leq 0$ and so $a^p=a$. Moreover, from $a_M = \alpha^{p^M} \equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Let $M\to\infty$, we obtain $|a-\alpha|_p\leq 1/p$ and so $a\equiv\alpha\pmod{p}$.
 
 \subsection*{Exercise 1.20}
 
-This can be done by using the same idea as in Ex 1.19 (p. 8), we skip the details.
+This can be done by using the same idea as in Ex 1.19 in \S2 (p. 8), we skip the details.
 
 \subsection*{Exercise 1.21}
 
-\subsection*{Bonus 1.1} \label{Bonus 1.1}
+\subsection*{Bonus 1.2} \label{Bonus 1.2}
 
 We give another proof of Ex 1.6 (p. 19), which is an analog of Newton's method.
 

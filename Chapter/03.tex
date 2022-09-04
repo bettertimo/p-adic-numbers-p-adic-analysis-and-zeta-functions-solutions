@@ -1,0 +1,25 @@
+\documentclass[../Koblitz.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Building up \texorpdfstring{$\Omega$}{Omega}}
+
+\section*{\S2 (pp. 65-66)}
+
+\subsection*{Exercise 3.5}
+
+We first check that $p\ZZ_p$ is a prime ideal in $\ZZ_p$. If $x,y\in\ZZ_p$ and $xy\in p\ZZ_p$, i.e., $|xy|_p=|x|_p|y|_p<1$, then $|x|_p<1$ or $|y|_p<1$. So we have $x\in p\ZZ_p$ or $y\in p\ZZ_p$.
+
+Next, let $P$ be any prime ideal in $\ZZ_p$. We claim that $P=p\ZZ_p$. 
+
+$(\subseteq)$ Let $x\in P\varsubsetneq\ZZ_p$. Since $x$ is not a unit, we have $|x|_p<1$, i.e., $x\in p\ZZ_p$. (Note that we can replace $P$ by any non-zero proper ideal $I$ in $\ZZ_p$ and see that in fact $p\ZZ_p$ is the unique maximal ideal in $\ZZ_p$. This can also be seen by letting $K=\QQ_p$ in the Prop in page 64.)
+
+$(\supseteq)$ It's sufficient to show that $p\in P$. Take an element $x=p^nu\in P$ where $n\in\NN$ and $u\in\ZZ_p^\times$. Suppose on the contrary, $p\not\in P$, then we have $p^k\not\in P$ for any $k\in\NN$. In particular, $p^n\not\in P$. Moreover, since $u\in\ZZ_p\setminus P$, so $p^nu\not\in P$, a contradiction.
+
+Lastly, we show that any ideal in $\ZZ_p$ is of the form $p^n\ZZ_p$ for some $n\in\NN$. Fix an ideal $I$. Set $n_0:=\min \{n\mid x=p^nu\in I, \text{where }n\in\NN\cup\{0\} \text{ and } u\in\ZZ_p^\times\}$. We claim that $I=p^{n_0}\ZZ_p$.
+
+$(\subseteq)$ Let $x=p^nu\in I$ where $n\geq n_0$ and $u\in\ZZ_p^\times$. Then $x=p^{n_0}(p^{n-n_0}u)\in p^{n_0}\ZZ_p$.
+
+$(\supseteq)$ It's sufficient to show that $p^{n_0}\in I$. Let $x_0=p^{n_0}u_0\in I$ having the minimum order where $u_0\in\ZZ_p^\times$. Then $x_0\cdot u_0^{-1}=p^{n_0}\in I$.
+
+\end{document}
