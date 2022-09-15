@@ -250,32 +250,35 @@ Suppose this property holds for $i=k-1$, i.e., $-b'\leq\alpha_{k-1}\leq a'$. Not
 
 We imitate the proof of basic version of Hensel's lemma (p. 16), i.e., we show that there exists $\{a_n\}_{n=1}^\infty\subset\ZZ$ s.t. for all $n$, we have (1) $F(a_n)\equiv0 \pmod{p^{2M+1+n}}$ (2) $a_n\equiv a_{n-1} \pmod{p^{M+n}}$ and (3) $0\leq a_n < p^{M+1+n}$. (See \nameref{Bonus 1.2} for the analog proof of Newton's method.)
 
-Set $\tilde{a}:=\tilde{a_0}+\tilde{a_1}p+\cdots+\tilde{a_M}p^M$ and $a_0 := \tilde{a} + p^{M+1}A$ where $A\in\ZZ_p$ and $0\leq\tilde{a_i}\leq p-1$. Note that the desired property $a\equiv a_0 \pmod{p^{M+1}}$ forces $a=\tilde{a}+b_1p^{M+1}\cdots$. Write $F(x)=\sum c_ix^i$. We apply induction on $n$. When $n=1$, (2) and (3) imply $a_1=\tilde{a}+b_1p^{M+1}$ where $0\leq b_1 \leq p-1$. And (1) implies
+Write $a_0 := \tilde{a_0}+\cdots+\tilde{a_M}p^M + \tilde{a_{M+1}}p^{M+1}+\cdots$ where $0\leq\tilde{a_i}\leq p-1$ for all $i$. Set $\tilde{a}:=\tilde{a_0}+\cdots+\tilde{a_M}p^M$, and note that we have $a_0\equiv\tilde{a} \pmod{p^i}$ for $i=1,\ldots,M+1$. Write $F(x)=\sum c_ix^i$. We apply induction on $n$. When $n=1$, (2) and (3) imply $a_1=\tilde{a}+b_1p^{M+1}$ where $0\leq b_1 \leq p-1$. And (1) implies
 \begin{align*}
 0 &\equiv F(a_1) = \sum c_i\left(\tilde{a}+b_1p^{M+1}\right)^i = \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}+\jk\right) \\
 &\equiv \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}\right) = F(\tilde{a}) + F'(\tilde{a})b_1p^{M+1} \pmod{p^{2M+2}}
 \end{align*}
 
-From $a_0 \equiv \tilde{a} \pmod{p^{M+1}}$ we have $F'(\tilde{a})\equiv F'(a_0) \equiv 0 \pmod{p^{M+1}}$. This implies
+From $a_0 \equiv \tilde{a} \pmod{p^M}$ we have $F'(\tilde{a})\equiv F'(a_0) \equiv 0 \pmod{p^M}$ by assumption. This implies
 \begin{align*}
-0\equiv F(a_0) &= \sum c_i\left(\tilde{a} + p^{M+1}A\right)^i \equiv F(\tilde{a}) + F'(\tilde{a})p^{M+1}A \equiv F(\tilde{a}) \pmod{p^{2M+1}}
+0\equiv F(a_0) &= \sum c_i\left(\tilde{a} + p^{M+1}\cdot\jk\right)^i \equiv F(\tilde{a}) + F'(\tilde{a})p^{M+1}\cdot\jk \equiv F(\tilde{a}) \pmod{p^{2M+1}}
 \end{align*}
-So we can write $F(\tilde{a})\equiv \alpha p^{2M+1} \pmod{p^{2M+2}}$ where $\alpha\in\{0,1,\ldots,p-1\}$. Then we have $\alpha p^{2M+1} + F'(\tilde{a})b_1p^{M+1} \equiv 0 \pmod{p^{2M+2}}$, or equivalently, $\alpha p^M+F'(\tilde{a})b_1\equiv 0\pmod{p^{M+1}}$. Moreover, since $F'(\tilde{a})\equiv F'(a_0)\equiv 0 \pmod{p^M}$ by assumption, so we can further reduce it to $\alpha+(F'(\tilde{a})/p^M)\cdot b_1 \equiv 0\pmod{p}$. Finally, since $F'(a_0)\not\equiv 0 \pmod{p^{M+1}}$ by assumption, so $F'(\tilde{a})/p^M \equiv F'(a_0)/p^M\not\equiv 0 \pmod{p}$. Hence, $b_1$ is uniquely solvable.
+So we can write $F(\tilde{a})\equiv \alpha p^{2M+1} \pmod{p^{2M+2}}$ where $\alpha\in\{0,1,\ldots,p-1\}$. Then we have $$\alpha p^{2M+1} + F'(\tilde{a})b_1p^{M+1} \equiv 0 \pmod{p^{2M+2}},$$ or equivalently, $\alpha p^M+F'(\tilde{a})b_1\equiv 0\pmod{p^{M+1}}$. Moreover, since $F'(\tilde{a})\equiv 0 \pmod{p^M}$, so we can further reduce it to $$\alpha+(F'(\tilde{a})/p^M)\cdot b_1 \equiv 0\pmod{p}$$ Finally, since $F'(a_0)\not\equiv 0 \pmod{p^{M+1}}$ by assumption, so $F'(\tilde{a})/p^M \equiv F'(a_0)/p^M\not\equiv 0 \pmod{p}$. Hence, $b_1$ is uniquely solvable.
 
 Now, suppose we have obtained $a_1,\ldots,a_{k-1}$. We want to find $a_k$. (2) and (3) imply $a_k=a_{k-1}+b_kp^{M+k}$ where $0\leq b_k\leq p-1$. And (1) implies
 \begin{align*}
 0\equiv F(a_k) = \sum c_i\left(a_{k-1}+b_kp^{M+k}\right)^i \equiv F(a_{k-1})+F'(a_{k-1})b_kp^{M+k} \pmod{p^{2M+1+k}}
 \end{align*}
-Since by (1) in induction hypothesis, we have $F(a_{k-1})\equiv 0 \pmod{p^{2M+k}}$. So we can write $F(a_{k-1}) \equiv \alpha'p^{2M+k} \pmod{p^{2M+1+k}}$ where
-$\alpha'\in\{0,1,\ldots,p-1\}$. Then we have $\alpha'p^{2M+k}+F'(a_{k-1})b_kp^{M+k} \pmod{p^{2M+1+k}}$, or equivalently, $\alpha'p^M+F'(a_{k-1})b_k \pmod{p^{M+1}}$. Moreover, from (2) in induction hypothesis, we have $a_{k-1}\equiv a_0 \pmod{p^{M+1}}$ and thus $F'(a_{k-1})\equiv F'(a_0)\equiv 0 \pmod{p^M}$. So we can further reduce it to $\alpha'+(F'(a_{k-1})/p^M)\cdot b_k \equiv 0\pmod{p}$. Finally, since $F'(a_{k-1})\equiv F'(a_0)\not\equiv 0 \pmod{p^{M+1}}$, so $F'(a_{k-1})/p^M \equiv F'(a_0)/p^M\not\equiv 0 \pmod{p}$. Hence, $b_k$ is uniquely solvable.
 
-Now, set $a:=\tilde{a}+b_1p^{M+1}+b_2p^{M+2}+\cdots$. Then $a\equiv \tilde{a} \equiv a_0\pmod{p^{M+1}}$. Moreover, we have for each $n$ that
+Since by (1) in the induction hypothesis, we have $F(a_{k-1})\equiv 0 \pmod{p^{2M+k}}$. So we can write $F(a_{k-1}) \equiv \alpha'p^{2M+k} \pmod{p^{2M+1+k}}$ where
+$\alpha'\in\{0,1,\ldots,p-1\}$. Then we have $$\alpha'p^{2M+k}+F'(a_{k-1})b_kp^{M+k} \equiv 0\pmod{p^{2M+1+k}},$$ or equivalently, $\alpha'p^M+F'(a_{k-1})b_k \equiv0 \pmod{p^{M+1}}$. Moreover, from (2) in the induction hypothesis, we have $a_{k-1}\equiv a_0 \pmod{p^{M+1}}$ and so $F'(a_{k-1})\equiv F'(a_0)\equiv 0 \pmod{p^M}$. Hence, we can further reduce it to $$\alpha'+(F'(a_{k-1})/p^M)\cdot b_k \equiv 0\pmod{p}$$ Finally, since $F'(a_{k-1})\equiv F'(a_0)\not\equiv 0 \pmod{p^{M+1}}$, so $F'(a_{k-1})/p^M \equiv F'(a_0)/p^M\not\equiv 0 \pmod{p}$. Hence, $b_k$ is uniquely solvable.
+
+Inductively, we obtain the desired sequence $\{a_n\}$ and $0\leq b_1,b_2,\ldots \leq p-1$ satisfying $a_1=\tilde{a}+b_1p^{M+1}$ and $a_n=a_{n-1}+b_np^{M+n}$ for all $n\geq2$. Now, set $a:=\tilde{a}+b_1p^{M+1}+b_2p^{M+2}+\cdots$. Then $a\equiv \tilde{a} \equiv a_0\pmod{p^{M+1}}$. Moreover, we have for each $n$ that
 \begin{align*}
 F(a) &\equiv F(\tilde{a}+b_1p^{M+1}+\cdots+b_np^{M+n}) \\
 &= F(\tilde{a}+(a_1-\tilde{a})+\cdots+(a_n-a_{n-1})) \\
 &= F(a_n) \equiv 0 \pmod{p^{M+1+n}}
 \end{align*}
-This forces $F(a)=0$. It's remaining to show the uniqueness. This is easy because we know $a$ has the form $\tilde{a}+b'_1p^{M+1}\cdots$. And every such $a$ corresponds to a sequence $\{a_n\}$ which satisfies (1), (2) and (3). So the uniqueness of $\{b_n\}$ implies the uniqness of $a$.
+This forces the $p$-adic number $F(a)=0$.
+
+It's remaining to show the uniqueness. This is easy because we know $a$ is of the form $\tilde{a}+b'_1p^{M+1}\cdots$. And every such $a$ corresponds to a sequence $\{a_n\}$ which satisfies (2) and (3). So the uniqueness of $\{a_n\}$ we've just proved implies the uniqness of $a$.
 
 \subsection*{Exercise 1.7}
 
@@ -336,7 +339,6 @@ G(a_2)&=(12+7^2b_2)^2+3\equiv 0\pmod{7^3} \implies b_2=6 \implies a_2=306 \\
 G(a_3)&=(306+7^3b_3)^2+3\equiv 0\pmod{7^4} \implies b_3=0
 \end{align*}
 So $\pm\sqrt{-3}=2+5\cdot7+0\cdot7^2+6\cdot7^3+\cdots$ and $5+1\cdot7+6\cdot7^2+0\cdot7^3+\cdots$ in $\QQ_7$.
-
 
 \subsection*{Exercise 1.10}
 
