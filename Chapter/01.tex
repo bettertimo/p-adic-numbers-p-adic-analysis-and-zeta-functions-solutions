@@ -65,9 +65,7 @@ Since $\snr_{p_1}$ is equivalent to $\snr_{p_2}$, we know $\{p_1^n\}_{n=1}^\inft
 
 \subsection*{Exercise 1.12}
 
-Observe that for each $1\leq n\leq N$, the integers between $1$ and $p^N$ which are divisible by $p^n$ are precisely $\{p^n,2p^n,3p^n,\ldots,(p^{N-n})p^n\}=:\Pcal_n$. So $\ord_p((p^N)!) = \sum_{k=1}^{p^N} \ord_p(k) = \sum_{n=1}^N \#(\Pcal_n) = \sum_{n=1}^N p^{N-n} = 1 + p + p^2 + \cdots + p^{N-1}$.
-
-The key observation is that if $\ord_p(k)=n_0$, then $k\in \bigcap_{n=1}^{n_0} \Pcal_n$. So $k$ will be counted $n_0$ times.
+Observe that for each $1\leq n\leq N$, the integers between $1$ and $p^N$ which are divisible by $p^n$ are precisely $\{p^n,2p^n,\ldots,(p^{N-n})p^n\}=:\Pcal_n$. So $\ord_p((p^N)!) = \sum_{k=1}^{p^N} \ord_p(k) = \sum_{n=1}^N \#(\Pcal_n) = \sum_{n=1}^N p^{N-n} = 1 + p + p^2 + \cdots + p^{N-1}$. (The key observation is that if $\ord_p(k)=n_0$, then $k\in \bigcap_{n=1}^{n_0} \Pcal_n$. So $k$ will be counted $n_0$ times.)
 
 \subsection*{Exercise 1.13}
 
@@ -75,9 +73,30 @@ Note that $a=0$ is trivial, and $a=1$ has been done in Ex 1.12. So fix $2\leq a\
 
 Case 1: If $1\leq k<p^N$, then since $\ord_p(\alpha p^N)\geq N$ and $\ord_p(k)<N$, so by the non-Archimedean property, we have $\ord_p(\alpha p^N+k) = \min\{\ord_p(\alpha p^N),\ord_p(k)\} = \ord_p(k)$.
 
-Case 2: If $k=p^N$, then $\ord_p(\alpha p^N+k) = \ord_p((\alpha+1)p^N) = \ord_p(\alpha+1) + \ord_p(p^N) = 0+N = N = \ord_p(k)$. (We've used the fact that $1\leq \alpha+1 \leq a < p$.)
+Case 2: If $k=p^N$, then $\ord_p(\alpha p^N+k) = \ord_p((\alpha+1)p^N) = \ord_p(\alpha+1) + \ord_p(p^N) = 0+N = N = \ord_p(k)$. (We've used the fact that $1\leq \alpha+1 \leq a < p$. So $\ord_p(\alpha+1)=0$.)
 
 \subsection*{Exercise 1.14}
+
+We use the same idea as in Ex 1.12 above. Observe that for $1\leq i\leq s$, the integers between $1$ and $n$ which are divisible by $p^i$ are precisely $\{p^i,2p^i,\ldots,\lfloor n/p^i\rfloor p^i\}=:\Pcal_i$. So we have
+\begin{align*}
+\ord_p(n!) &= \sum_{k=1}^n \ord_p(k) = \sum_{i=1}^s \#(\Pcal_i) = \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor \\
+&= \sum_{i=1}^s \left \lfloor \frac{a_0}{p^i} + \cdots + \frac{a_{i-1}}{p} + a_i + a_{i+1}p + \cdots +a_sp^{s-i} \right \rfloor
+\end{align*}
+Note that for each $i$, the fractional part $\sum_{j=1}^i a_{i-j}/p^j \leq (p-1)\sum_{j=1}^i 1/p^j < 1$. So we have
+\begin{align*}
+\ord_p(n!) &= \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor = \sum_{i=1}^s \left(\frac{n}{p^i}- \sum_{j=1}^i \frac{a_{i-j}}{p^j} \right) = \sum_{i=1}^s \frac{n}{p^i} - \sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j}
+\end{align*}
+
+The first sum $\sum_{i=1}^s n/p^i = (n-n/p^s)/(p-1)$ by a simple calculation. And the double summation gives us
+\begin{align*}
+\sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j} &= \sum_{u=0}^{s-1} a_u\cdot\left( \sum_{v=1}^{s-u} \frac{1}{p^v} \right)= \sum_{u=0}^{s-1} \frac{a_u(p^{s-u}-1)}{p^{s-u}(p-1)} = \frac{1}{p-1} \sum_{u=0}^{s-1}\left(a_u-\frac{1}{p^{s-u}}\right) \\
+&= \frac{1}{p-1} \left(\sum_{u=0}^{s-1} a_u - \left(\frac{n}{p^s}-a_s\right)\right) = \frac{1}{p-1} \left(S_n - \frac{n}{p^s}\right) 
+\end{align*}
+
+Hence, we have
+\begin{align*}
+\ord_p(n!) = \frac{n-n/p^s}{p-1} - \frac{S_n - n/p^s}{p-1} = \frac{n-S_n}{p-1}
+\end{align*}
 
 \subsection*{Exercise 1.15}
 
