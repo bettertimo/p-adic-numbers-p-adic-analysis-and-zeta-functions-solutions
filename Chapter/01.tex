@@ -45,10 +45,6 @@ Now suppose $\rho>1$, we claim that there exist $x,y\in\QQ$ s.t. $\rho^{\ord_p(x
 
 Take $k\in\NN$ large enough s.t. $\sqrt[k]{2}<\rho$. So we have $\rho^k>2$. Now, let $x=1$ and $y=p^k-1$. Then $\ord_p(x)=\ord_p(y)=0$ and $\ord_p(x+y)=k$. Hence, we have $\rho^{\ord_p(x+y)} = \rho^k >2 = \rho^0 + \rho^0 = \rho^{\ord_p(x)}+\rho^{\ord_p(y)}$.
 
-\begin{comment}
-Take $k\in\NN$ large enough s.t. $\sqrt[k]{2}<\rho$. Note that we can take $k$ is even. So we have $\rho^{k+1}>2\rho$. Now let $x=p\cdot(p^{k/2}+1)^{-1}$ and $y=p\cdot(p^{k/2}-1)$. Then $x,y\in\QQ$, and it's easy to check that $\ord_p(x)=\ord_p(y)=1$ and $\ord_p(x+y)=k+1$. So we have $$\rho^{\ord_p(x+y)} = \rho^{k+1} >2\rho = \rho+\rho = \rho^{\ord_p(x)}+\rho^{\ord_p(y)}$$
-\end{comment}
-
 \subsection*{Exercise 1.7}
 
 WLOG, assume $p_1<p_2$. Suppose on the contrary, $\snr_{p_1}$ is equivalent to $\snr_{p_2}$. Consider the sequence $\{p_1^n\}_{n=1}^\infty$. We claim that this is Cauchy w.r.t. $\snr_{p_1}$. Given $\epsilon>0$, take $n_\epsilon\in\NN$ s.t. $1/p_1^{n_\epsilon}<\epsilon$. If $n>m\geq n_\epsilon$, then $|p_1^n-p_1^m|_{p_1} = |p_1^m(p_1^{n-m}-1)|_{p_1} = 1/p_1^m \leq 1/p_1^{n_\epsilon} < \epsilon$.
@@ -186,15 +182,17 @@ We omit most of the detailed calculations.
 
 (iii) $8\cdot11^{-1}+8+9\cdot11+5\cdot11^2+\cdots$
 
-(iv) In order to find the $p$-adic expansion of a rational number $a/b$ where $p\nmid b$, we start by writing $a/b=pq+r$ where $q\in\ZZ_p$ and $r=0,1,2,\ldots,p-1$. Then $r$ will be the first term. And repeat this process with $q$ to find the remaing terms. (Make sure you know why this works!)
+(iv) In order to find the $p$-adic expansion of a rational number $a/b$ where $p\nmid b$, we start by writing $a/b=r+pq$ where $q\in\ZZ_p$ and $r=0,1,2,\ldots,p-1$. Then $r$ will be the first digit. Repeat this process with $q$ to find the remaining digits. (Make sure you know why this works!)
 
-As an example, let $a/b=2/3$, then we have
+As an example, let $p=2$ and consider $a/b=2/3$. Then we have
 \begin{alignat*}{2}
-\frac{2}{3}&=2\left(\frac{1}{3}\right)+0 &\qquad\qquad \frac{1}{3}&=2\left(\frac{-1}{3}\right)+1 \\
-\frac{-1}{3}&=2\left(\frac{-2}{3}\right)+1 &\qquad\qquad
-\frac{-2}{3}&=2\left(\frac{-1}{3}\right)+0
+\frac{2}{3}&=0 + 2\left(\frac{1}{3}\right) &\qquad\qquad \frac{1}{3}&=1 + 2\left(\frac{-1}{3}\right) \\
+\frac{-1}{3}&=1 + 2\left(\frac{-2}{3}\right) &\qquad\qquad
+\frac{-2}{3}&=0 + 2\left(\frac{-1}{3}\right)
 \end{alignat*}
-Note that $-1/3$ has already been done in the third step, so we have \begin{align*}
+Note that $-1/3$ has already been done in the third step, so we can stop from here.
+
+Combining all the equations, we obtain \begin{align*}
 \frac{2}{3} &= 0+1\cdot2+1\cdot2^2+0\cdot2^3+1\cdot2^4+0\cdot2^5+\cdots \\
 &= 1\cdot2+1\cdot2^2+1\cdot2^4+1\cdot2^6+\cdots
 \end{align*}
@@ -205,7 +203,9 @@ Note that $-1/3$ has already been done in the third step, so we have \begin{alig
 
 (vii) $-9/16=10+4\cdot13^2+7\cdot13^3+10\cdot13^4+4\cdot13^6+7\cdot13^7+\cdots$
 
-(viii) Note that $1/1000=1/(5^3\cdot8)$. In this situation we need to consider $1/8$ first, then multiply both sides by $1/5^3$ to obtain $1/1000$. Since $1/8=2+4\cdot5+1\cdot5^2+4\cdot5^3+1\cdot5^4+\cdots$, so $1/1000=2\cdot5^{-3}+4\cdot5^{-2}+1\cdot5^{-1}+4+1\cdot5+4\cdot5^2+1\cdot5^3+\cdots$.
+(viii) Note that $1/1000=1/(5^3\cdot8)$. In this situation we need to consider $1/8$ first. Namely, find the $p$-adic expansion of $1/8$, then multiply both sides by $1/5^3$ to obtain the $p$-adic expansion of $1/1000$.
+
+$1/8=2+4\cdot5+1\cdot5^2+4\cdot5^3+1\cdot5^4+\cdots$, so $1/1000=2\cdot5^{-3}+4\cdot5^{-2}+1\cdot5^{-1}+4+1\cdot5+4\cdot5^2+1\cdot5^3+\cdots$.
 
 (ix) \begin{alignat*}{3}
 6!&=3(240)+0 &\qquad\qquad 240&=3(80)+0 &\qquad\qquad 80&=3(26)+2 \\
