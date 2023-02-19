@@ -4,7 +4,7 @@
 
 \chapter{\texorpdfstring{$p$}{p}-adic numbers}
 
-\section*{\S2 (pp. 6-8)}
+\section*{\S2 Metrics on the rational numbers}
 
 \subsection*{Exercise 1.1}
 
@@ -22,8 +22,8 @@ Now, $\|n\|=\|1+\cdots+1\| \leq \max\{\|1\|,\ldots,\|1\|\}=1$. So we are done.
 
 Given $x,y\in F$. By the binomial theorem and the assumption, we have 
 \begin{align*}
-\|x+y\|^n &= \|(x+y)^n\| = \left\|\sum_{k=0}^n \binom{n}{k}x^{n-k}y^k\right\| \leq \sum_{k=0}^n \left\|\binom{n}{k}\right\|\|x^{n-k}\|\|y^k\| \\
-&\leq \sum_{k=0}^n \|x\|^{n-k} \|y\|^k \leq (n+1)\max\{\|x\|,\|y\|\}^n
+    \|x+y\|^n &= \|(x+y)^n\| = \left\|\sum_{k=0}^n \binom{n}{k}x^{n-k}y^k\right\| \leq \sum_{k=0}^n \left\|\binom{n}{k}\right\|\|x^{n-k}\|\|y^k\| \\
+    &\leq \sum_{k=0}^n \|x\|^{n-k} \|y\|^k \leq (n+1)\max\{\|x\|,\|y\|\}^n
 \end{align*}
 The result now follows by taking $n$-th root both sides and letting $n\to\infty$.
 
@@ -37,7 +37,7 @@ $(\Rightarrow)$ Suppose $\dnr$ is Archimedean, then by definition, $\exists x,y\
 
 \subsection*{Exercise 1.6}
 
-Assume $0<\rho<1$. We check the given function is non-Archimedean, i.e., $\rho^{\ord_p(x+y)}\leq \max\{\rho^{\ord_p(x)},\rho^{\ord_p(y)}\}$. Given $x,y\in\QQ$, we may assume $x,y,x+y\neq0$ because otherwise this holds trivially. From the proof of the Prop in page 2, we know $\ord_p(x+y) \geq \min\{\ord_p(x),\ord_p(y)\}$ and so $-\ord_p(x+y) \leq \max\{-\ord_p(x),-\ord_p(y)\}$. Write $\rho=1/P$, then $$\rho^{\ord_p(x+y)} = P^{-\ord_p(x+y)} \leq \max\{P^{-\ord_p(x)},P^{-\ord_p(y)}\} = \max\{\rho^{\ord_p(x)},\rho^{\ord_p(y)}\}$$
+Assume $0<\rho<1$. We check the given function is non-Archimedean, i.e., $\rho^{\ord_p(x+y)}\leq \max\{\rho^{\ord_p(x)},\rho^{\ord_p(y)}\}$. Given $x,y\in\QQ$, we may assume $x,y,x+y\neq0$ because otherwise this holds trivially. From the proof of the Proposition in page 2, we know $\ord_p(x+y) \geq \min\{\ord_p(x),\ord_p(y)\}$ and so $-\ord_p(x+y) \leq \max\{-\ord_p(x),-\ord_p(y)\}$. Write $\rho=1/P$, then $$\rho^{\ord_p(x+y)} = P^{-\ord_p(x+y)} \leq \max\{P^{-\ord_p(x)},P^{-\ord_p(y)}\} = \max\{\rho^{\ord_p(x)},\rho^{\ord_p(y)}\}$$
 
 For $\rho=1$, we have $\rho^{\ord_p(x)}=1$ for all $x\neq0$. So the given function is the trivial norm.
 
@@ -65,7 +65,7 @@ Observe that for each $1\leq n\leq N$, the integers between $1$ and $p^N$ which 
 
 \subsection*{Exercise 1.13}
 
-Note that $a=0$ is trivial, and $a=1$ has been done in Ex 1.12. So fix $2\leq a\leq p-1$. We claim that for any $1\leq k\leq p^N$ and $0\leq\alpha\leq a-1$, we have $\ord_p(k)=\ord_p(\alpha p^N+k)$. This will imply the result immediately.
+Note that $a=0$ is trivial, and $a=1$ has been done in Exercise 1.12. So fix $2\leq a\leq p-1$. We claim that for any $1\leq k\leq p^N$ and $0\leq\alpha\leq a-1$, we have $\ord_p(k)=\ord_p(\alpha p^N+k)$. This will imply the result immediately.
 
 Case 1: If $1\leq k<p^N$, then since $\ord_p(\alpha p^N)\geq N$ and $\ord_p(k)<N$, so by the non-Archimedean property, we have $\ord_p(\alpha p^N+k) = \min\{\ord_p(\alpha p^N),\ord_p(k)\} = \ord_p(k)$.
 
@@ -73,25 +73,25 @@ Case 2: If $k=p^N$, then $\ord_p(\alpha p^N+k) = \ord_p((\alpha+1)p^N) = \ord_p(
 
 \subsection*{Exercise 1.14}
 
-We use the same idea as in Ex 1.12 above. Observe that for $1\leq i\leq s$, the integers between $1$ and $n$ which are divisible by $p^i$ are precisely $\{p^i,2p^i,\ldots,\lfloor n/p^i\rfloor p^i\}=:\Pcal_i$. So we have
+We use the same idea as in Exercise 1.12 above. Note that for $1\leq i\leq s$, the integers between $1$ and $n$ which are divisible by $p^i$ are precisely $\{p^i,2p^i,\ldots,\lfloor n/p^i\rfloor p^i\}=:\Pcal_i$. So we have
 \begin{align*}
-\ord_p(n!) &= \sum_{k=1}^n \ord_p(k) = \sum_{i=1}^s \#(\Pcal_i) = \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor \\
-&= \sum_{i=1}^s \left \lfloor \frac{a_0}{p^i} + \cdots + \frac{a_{i-1}}{p} + a_i + a_{i+1}p + \cdots +a_sp^{s-i} \right \rfloor
+    \ord_p(n!) &= \sum_{k=1}^n \ord_p(k) = \sum_{i=1}^s \#(\Pcal_i) = \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor \\
+    &= \sum_{i=1}^s \left \lfloor \frac{a_0}{p^i} + \cdots + \frac{a_{i-1}}{p} + a_i + a_{i+1}p + \cdots +a_sp^{s-i} \right \rfloor
 \end{align*}
 Note that for each $i$, the fractional part $\sum_{j=1}^i a_{i-j}/p^j \leq (p-1)\sum_{j=1}^i 1/p^j < 1$. So we have
 \begin{align*}
-\ord_p(n!) &= \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor = \sum_{i=1}^s \left(\frac{n}{p^i}- \sum_{j=1}^i \frac{a_{i-j}}{p^j} \right) = \sum_{i=1}^s \frac{n}{p^i} - \sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j}
+    \ord_p(n!) &= \sum_{i=1}^s \left \lfloor \frac{n}{p^i} \right \rfloor = \sum_{i=1}^s \left(\frac{n}{p^i}- \sum_{j=1}^i \frac{a_{i-j}}{p^j} \right) = \sum_{i=1}^s \frac{n}{p^i} - \sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j}
 \end{align*}
 
 The first sum $\sum_{i=1}^s n/p^i = (n-n/p^s)/(p-1)$ by a simple calculation. And the double summation gives us
 \begin{align*}
-\sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j} &= \sum_{u=0}^{s-1} a_u\cdot\left( \sum_{v=1}^{s-u} \frac{1}{p^v} \right)= \sum_{u=0}^{s-1} \frac{a_u(p^{s-u}-1)}{p^{s-u}(p-1)} = \frac{1}{p-1} \sum_{u=0}^{s-1}\left(a_u-\frac{1}{p^{s-u}}\right) \\
-&= \frac{1}{p-1} \left(\sum_{u=0}^{s-1} a_u - \left(\frac{n}{p^s}-a_s\right)\right) = \frac{1}{p-1} \left(S_n - \frac{n}{p^s}\right) 
+    \sum_{i=1}^s \sum_{j=1}^i \frac{a_{i-j}}{p^j} &= \sum_{u=0}^{s-1} a_u\cdot\left( \sum_{v=1}^{s-u} \frac{1}{p^v} \right)= \sum_{u=0}^{s-1} \frac{a_u(p^{s-u}-1)}{p^{s-u}(p-1)} = \frac{1}{p-1} \sum_{u=0}^{s-1}\left(a_u-\frac{1}{p^{s-u}}\right) \\
+    &= \frac{1}{p-1} \left(\sum_{u=0}^{s-1} a_u - \left(\frac{n}{p^s}-a_s\right)\right) = \frac{1}{p-1} \left(S_n - \frac{n}{p^s}\right) 
 \end{align*}
 
 Hence, we have
 \begin{align*}
-\ord_p(n!) = \frac{n-n/p^s}{p-1} - \frac{S_n - n/p^s}{p-1} = \frac{n-S_n}{p-1}
+    \ord_p(n!) = \frac{n-n/p^s}{p-1} - \frac{S_n - n/p^s}{p-1} = \frac{n-S_n}{p-1}
 \end{align*}
 
 \subsection*{Exercise 1.15}
@@ -104,25 +104,25 @@ Write $x=p^\alpha a/p^\beta b$ where $p\nmid a,b$. Then $|x|_p=1/p^{\alpha-\beta
 
 Write $x=p^\alpha a/p^\beta b$ where $p\nmid a,b$, so $\ord_p(x)=\alpha-\beta$. Note that
 \begin{align*}
-\left|\frac{x^i}{i!}\right|_p &= \prod_{j=1}^i \left|\frac{x}{j}\right|_p = \prod_{j=1}^i p^{-\left(\alpha-\beta-\ord_p(j)\right)} \\
-&= p^{-\sum_{j=1}^i \left(\alpha-\beta-\ord_p(j)\right)} = p^{-\left(i(\alpha-\beta)-\ord_p(i!)\right)}
+    \left|\frac{x^i}{i!}\right|_p &= \prod_{j=1}^i \left|\frac{x}{j}\right|_p = \prod_{j=1}^i p^{-\left(\alpha-\beta-\ord_p(j)\right)} \\
+    &= p^{-\sum_{j=1}^i \left(\alpha-\beta-\ord_p(j)\right)} = p^{-\left(i(\alpha-\beta)-\ord_p(i!)\right)}
 \end{align*}
 So the condition $\lim_{i\to\infty} |x^i/i!|_p=0$ is equivalent to $\lim_{i\to\infty} \left(i(\alpha-\beta)-\ord_p(i!)\right)=\infty$. Thus, the problem now becomes showing that
 \begin{align*}
-\lim_{i\to\infty} \left(i(\alpha-\beta)-\ord_p(i!)\right)=\infty \iff
-\begin{cases}
-\alpha-\beta\geq 1, &p\neq2 \\
-\alpha-\beta\geq 2, &p=2
-\end{cases}
+    \lim_{i\to\infty} \left(i(\alpha-\beta)-\ord_p(i!)\right)=\infty \iff
+    \begin{cases}
+        \alpha-\beta\geq 1, &p\neq2 \\
+        \alpha-\beta\geq 2, &p=2
+    \end{cases}
 \end{align*}
-Note also that by Ex 1.14, $\ord_p(i!)=(i-S_i)/(p-1)\geq0$ where $S_i$ is the sum of the digits of $i$ to the base $p$.
+Note also that by Exercise 1.14, $\ord_p(i!)=(i-S_i)/(p-1)\geq0$ where $S_i$ is the sum of the digits of $i$ to the base $p$.
 
 Case 1: Assume $p\neq2$. $(\Rightarrow)$ If $\alpha-\beta<1$, then clearly $i(\alpha-\beta)-\ord_p(i!)\not\to\infty$.
 
 $(\Leftarrow)$ Suppose $\alpha-\beta\geq 1$, then
 \begin{align*}
-i(\alpha-\beta)-\ord_p(i!) &\geq i-\frac{i-S_i}{p-1} = \frac{(p-1)i-i+S_i}{p-1} \\
-&\geq \frac{2i-i+S_i}{p-1} = \frac{i+S_i}{p-1} \to \infty
+    i(\alpha-\beta)-\ord_p(i!) &\geq i-\frac{i-S_i}{p-1} = \frac{(p-1)i-i+S_i}{p-1} \\
+    &\geq \frac{2i-i+S_i}{p-1} = \frac{i+S_i}{p-1} \to \infty
 \end{align*}
 as $i\to\infty$.
 
@@ -134,7 +134,7 @@ $(\Leftarrow)$ Suppose $\alpha-\beta\geq 2$, then $i(\alpha-\beta)-\ord_p(i!) = 
 
 Write $x=\pm p_1^{\alpha_1}\cdots p_k^{\alpha_k}$ where $\alpha_i\in\ZZ\setminus\{0\}$ and let $p$ be a prime. If $p\neq p_i$ for all $i$, then $\ord_p(x)=0$ and so $|x|_p=1$. And if $p=p_i$ for some $i$, then $\ord_p(x)=\alpha_i$ and so $|x|_p=1/p_i^{\alpha_i}$. Hence,
 \begin{align*}
-\prod_p |x|_p := \prod_{p\text{: prime}} |x|_p \cdot |x|_\infty = \prod_{i=1}^k \frac{1}{p_i^{\alpha_i}} \cdot p_1^{\alpha_1}\cdots p_k^{\alpha_k} = 1
+    \prod_p |x|_p := \prod_{p\text{: prime}} |x|_p \cdot |x|_\infty = \prod_{i=1}^k \frac{1}{p_i^{\alpha_i}} \cdot p_1^{\alpha_1}\cdots p_k^{\alpha_k} = 1
 \end{align*}
 
 \subsection*{Exercise 1.19}
@@ -157,7 +157,7 @@ We first claim that $\{a_{jN_j}\}_{j=1}^\infty$ is Cauchy in $\QQ$. Given $\epsi
 
 Let $N := \max\{M,j_\epsilon,i_\epsilon\}$. Then if $j>j'\geq N$, we have
 \begin{align*}
-|a_{jN_j}-a_{j'N_{j'}}|_p \leq \max\{|a_{jN_j}-a_{j'N_j}|_p,|a_{j'N_j}-a_{j'N_{j'}}|_p\} < \max\{\epsilon,p^{-j'}\} = \epsilon
+    |a_{jN_j}-a_{j'N_{j'}}|_p \leq \max\{|a_{jN_j}-a_{j'N_j}|_p,|a_{j'N_j}-a_{j'N_{j'}}|_p\} < \max\{\epsilon,p^{-j'}\} = \epsilon
 \end{align*}
 The second inequality holds because $N_j \geq j > N$, and $N_j>N_{j'}$ by our assumption.
 
@@ -165,13 +165,13 @@ Since $\{a_{jN_j}\}$ is Cauchy in $\QQ$, we let $a\in\QQ_p$ be the equivalence c
 
 Given $\epsilon>0$, take $M'\in\NN$ s.t. $p^{-M'}<\epsilon$. Since $\{a_{jN_j}\}$ is Cauchy in $\QQ$, choose $j_\epsilon'\in\NN$ s.t. for $i,j\geq j_\epsilon'$, we have $|a_{iN_i}-a_{jN_j}|_p<\epsilon$. Let $N':=\max\{M',j_\epsilon'\}$. Then if $j\geq N'$, we have $|a_{ji}-a_{iN_i}|_p \leq \max\{|a_{ji}-a_{jN_j}|_p,|a_{jN_j}-a_{iN_i}|_p\}$ by the non-Archimedean property, so $$\lim_{i\to\infty}|a_{ji}-a_{iN_i}|_p \leq \lim_{i\to\infty}\max\{|a_{ji}-a_{jN_j}|_p,|a_{jN_j}-a_{iN_i}|_p\} < \max\{p^{-j},\epsilon\} = \epsilon$$ This completes the proof.
 
-\section*{\S5 (pp. 19-20)}
+\section*{\S5 Arithmetic in \texorpdfstring{$\QQ_p$}{Qp}}
 
 \subsection*{Exercise 1.1}
 We assume $a_{-m}\neq0$. Since $1\leq a_{-m} \leq p-1$ and $0\leq a_i \leq p-1$ for each $i\geq-m+1$, we have
 \begin{align*}
--a &= -a_{-m}p^{-m} - a_{-m+1}p^{-m+1} - a_{-m+2}p^{-m+2} + \cdots \\
-&= (-a_{-m}+p)p^{-m}+(-a_{-m+1}-1+p)p^{-m+1}+(-a_{-m+2}-1+p)p^{-m+2}+\cdots
+    -a &= -a_{-m}p^{-m} - a_{-m+1}p^{-m+1} - a_{-m+2}p^{-m+2} + \cdots \\
+    &= (-a_{-m}+p)p^{-m}+(-a_{-m+1}-1+p)p^{-m+1}+(-a_{-m+2}-1+p)p^{-m+2}+\cdots
 \end{align*}
 Note that $1\leq -a_{-m}+p\leq p-1$ and $0\leq -a_i-1+p\leq p-1$ for $i\geq-m+1$.
 
@@ -189,20 +189,21 @@ We omit most of the detailed calculations.
 
 As an example, let $p=2$ and consider $a/b=2/3$. Then we have
 \begin{alignat*}{2}
-\frac{2}{3}&=0 + 2\left(\frac{1}{3}\right) &\qquad\qquad \frac{1}{3}&=1 + 2\left(\frac{-1}{3}\right) \\
-\frac{-1}{3}&=1 + 2\left(\frac{-2}{3}\right) &\qquad\qquad
-\frac{-2}{3}&=0 + 2\left(\frac{-1}{3}\right)
+    \frac{2}{3}&=0 + 2\left(\frac{1}{3}\right) &\qquad\qquad \frac{1}{3}&=1 + 2\left(\frac{-1}{3}\right) \\
+    \frac{-1}{3}&=1 + 2\left(\frac{-2}{3}\right) &\qquad\qquad
+    \frac{-2}{3}&=0 + 2\left(\frac{-1}{3}\right)
 \end{alignat*}
 Note that $-1/3$ has already been done in the third step, so we can stop from here.
 
-Combining all the equations, we obtain \begin{align*}
-\frac{2}{3} &= 0+1\cdot2+1\cdot2^2+0\cdot2^3+1\cdot2^4+0\cdot2^5+\cdots \\
-&= 1\cdot2+1\cdot2^2+1\cdot2^4+1\cdot2^6+\cdots
+Combining all the equations, we obtain
+\begin{align*}
+    \frac{2}{3} &= 0+1\cdot2+1\cdot2^2+0\cdot2^3+1\cdot2^4+0\cdot2^5+\cdots \\
+    &= 1\cdot2+1\cdot2^2+1\cdot2^4+1\cdot2^6+\cdots
 \end{align*}
 
-(v) Note that the denominator $6=7-1$, and we know $1+p+p^2+\cdots=1/(1-p)$ is valid in the $p$-adic world (see Ex 1.16 if necessary). So $-1/6=1+7+7^2+7^3+\cdots$.
+(v) Note that the denominator $6=7-1$, and we know $1+p+p^2+\cdots=1/(1-p)$ is valid in the $p$-adic world (see Exercise 1.16 if necessary). So $-1/6=1+7+7^2+7^3+\cdots$.
 
-(vi) Similarly, $-1/10=1+11+11^2+\cdots$. So by Ex 1.1, $1/10=10+9\cdot11+9\cdot11^2+\cdots$.
+(vi) Similarly, $-1/10=1+11+11^2+\cdots$. So by Exercise 1.1, $1/10=10+9\cdot11+9\cdot11^2+\cdots$.
 
 (vii) $-9/16=10+4\cdot13^2+7\cdot13^3+10\cdot13^4+4\cdot13^6+7\cdot13^7+\cdots$
 
@@ -211,9 +212,9 @@ Combining all the equations, we obtain \begin{align*}
 $1/8=2+4\cdot5+1\cdot5^2+4\cdot5^3+1\cdot5^4+\cdots$, so $1/1000=2\cdot5^{-3}+4\cdot5^{-2}+1\cdot5^{-1}+4+1\cdot5+4\cdot5^2+1\cdot5^3+\cdots$.
 
 (ix) \begin{alignat*}{3}
-6!&=3(240)+0 &\qquad\qquad 240&=3(80)+0 &\qquad\qquad 80&=3(26)+2 \\
-26&=3(8)+2 &\qquad \qquad 8&=3(2)+2 &\qquad\qquad 2&=3(0)+2 \\
-0&=3(0)+0
+    6!&=3(240)+0 &\qquad\qquad 240&=3(80)+0 &\qquad\qquad 80&=3(26)+2 \\
+    26&=3(8)+2 &\qquad \qquad 8&=3(2)+2 &\qquad\qquad 2&=3(0)+2 \\
+    0&=3(0)+0
 \end{alignat*}
 So $6!=2\cdot3^2+2\cdot3^3+2\cdot3^4+2\cdot3^5$.
 
@@ -233,7 +234,7 @@ $(\Leftarrow)$ Let $a=b/p^k$ where $b\in\NN$. Write $b$ to the base $p$, $b=\sum
 
 $(\Rightarrow)$ Suppose $|a|_p=1/p^m$, $m\in\ZZ$. Write $$ap^m=\jk+\sum_{t=0}^\infty \left(\sum_{s=1}^r a_{N+s}p^{N+s+tr}\right)$$ where $\jk=a_0+a_1p+\cdots+a_Np^N\in\NN$ is the non-repeating part. So we have $$a = \frac{\jk}{p^m}+\frac{\sum_{s=1}^r a_{N+s}p^{N+s}}{(1-p^r)p^m}\in\QQ$$
 
-$(\Leftarrow)$ Write $a=a'/b'$ where $\gcd(a',b')=1$. In view of Ex 1.1, we may assume $a',b'>0$. We can also assume $p\nmid b'$ because the multiplications of $p$ powers preserve the "repeating digits property". Now, let $q_{i-1}=pq_i+r_i$ where $q_0:=a'/b',q_i\in\ZZ_p$ and $r_i=0,1,\ldots,p-1$. It's sufficient to show that $q_i=q_j$ for some $i\neq j$.  (See Ex 1.2 (iv) above.)
+$(\Leftarrow)$ Write $a=a'/b'$ where $\gcd(a',b')=1$. In view of Exercise 1.1, we may assume $a',b'>0$. We can also assume $p\nmid b'$ because the multiplications of $p$ powers preserve the "repeating digits property". Now, let $q_{i-1}=pq_i+r_i$ where $q_0:=a'/b',q_i\in\ZZ_p$ and $r_i=0,1,\ldots,p-1$. It's sufficient to show that $q_i=q_j$ for some $i\neq j$.  (See Exercise 1.2 (iv) above.)
 
 We first claim by induction on $i$ that the denominator of $q_i$ is always $b'$ if we write $q_i$ in the lowest terms. When $i=1$, we have $a'/b'=pq_1+r_1$, so $q_1=(a'-r_1b')/pb'$. We know $\alpha_1:=(a'-r_1b')/p\in\ZZ$ because $q_1\in\ZZ_p$. And since $\gcd(a',b')=1$, so is $\gcd(\alpha_1,b')$. So $q_1=\alpha_1/b'$ is in lowest terms.
 
@@ -253,19 +254,19 @@ We imitate the proof of basic version of Hensel's lemma (p. 16), i.e., we show t
 
 Write $a_0 := \tilde{a_0}+\cdots+\tilde{a_M}p^M + \tilde{a_{M+1}}p^{M+1}+\cdots$ where $0\leq\tilde{a_i}\leq p-1$ for all $i$. Set $\tilde{a}:=\tilde{a_0}+\cdots+\tilde{a_M}p^M$, and note that we have $a_0\equiv\tilde{a} \pmod{p^i}$ for $i=1,\ldots,M+1$. Write $F(x)=\sum c_ix^i$. We apply induction on $n$. When $n=1$, (2) and (3) imply $a_1=\tilde{a}+b_1p^{M+1}$ where $0\leq b_1 \leq p-1$. And (1) implies
 \begin{align*}
-0 &\equiv F(a_1) = \sum c_i\left(\tilde{a}+b_1p^{M+1}\right)^i = \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}+\jk\right) \\
-&\equiv \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}\right) = F(\tilde{a}) + F'(\tilde{a})b_1p^{M+1} \pmod{p^{2M+2}}
+    0 &\equiv F(a_1) = \sum c_i\left(\tilde{a}+b_1p^{M+1}\right)^i = \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}+\jk\right) \\
+    &\equiv \sum c_i\left(\tilde{a}^i+i\tilde{a}^{i-1}b_1p^{M+1}\right) = F(\tilde{a}) + F'(\tilde{a})b_1p^{M+1} \pmod{p^{2M+2}}
 \end{align*}
 
 From $a_0 \equiv \tilde{a} \pmod{p^M}$ we have $F'(\tilde{a})\equiv F'(a_0) \equiv 0 \pmod{p^M}$ by assumption. This implies
 \begin{align*}
-0\equiv F(a_0) &= \sum c_i\left(\tilde{a} + p^{M+1}\cdot\jk\right)^i \equiv F(\tilde{a}) + F'(\tilde{a})p^{M+1}\cdot\jk \equiv F(\tilde{a}) \pmod{p^{2M+1}}
+    0\equiv F(a_0) &= \sum c_i\left(\tilde{a} + p^{M+1}\cdot\jk\right)^i \equiv F(\tilde{a}) + F'(\tilde{a})p^{M+1}\cdot\jk \equiv F(\tilde{a}) \pmod{p^{2M+1}}
 \end{align*}
 So we can write $F(\tilde{a})\equiv \alpha p^{2M+1} \pmod{p^{2M+2}}$ where $\alpha\in\{0,1,\ldots,p-1\}$. Then we have $$\alpha p^{2M+1} + F'(\tilde{a})b_1p^{M+1} \equiv 0 \pmod{p^{2M+2}},$$ or equivalently, $\alpha p^M+F'(\tilde{a})b_1\equiv 0\pmod{p^{M+1}}$. Moreover, since $F'(\tilde{a})\equiv 0 \pmod{p^M}$, so we can further reduce it to $$\alpha+(F'(\tilde{a})/p^M)\cdot b_1 \equiv 0\pmod{p}$$ Finally, since $F'(a_0)\not\equiv 0 \pmod{p^{M+1}}$ by assumption, so $F'(\tilde{a})/p^M \equiv F'(a_0)/p^M\not\equiv 0 \pmod{p}$. Hence, $b_1$ is uniquely solvable.
 
 Now, suppose we have obtained $a_1,\ldots,a_{k-1}$. We want to find $a_k$. (2) and (3) imply $a_k=a_{k-1}+b_kp^{M+k}$ where $0\leq b_k\leq p-1$. And (1) implies
 \begin{align*}
-0\equiv F(a_k) = \sum c_i\left(a_{k-1}+b_kp^{M+k}\right)^i \equiv F(a_{k-1})+F'(a_{k-1})b_kp^{M+k} \pmod{p^{2M+1+k}}
+    0\equiv F(a_k) = \sum c_i\left(a_{k-1}+b_kp^{M+k}\right)^i \equiv F(a_{k-1})+F'(a_{k-1})b_kp^{M+k} \pmod{p^{2M+1+k}}
 \end{align*}
 
 Since by (1) in the induction hypothesis, we have $F(a_{k-1})\equiv 0 \pmod{p^{2M+k}}$. So we can write $F(a_{k-1}) \equiv \alpha'p^{2M+k} \pmod{p^{2M+1+k}}$ where
@@ -273,9 +274,9 @@ $\alpha'\in\{0,1,\ldots,p-1\}$. Then we have $$\alpha'p^{2M+k}+F'(a_{k-1})b_kp^{
 
 Inductively, we obtain the desired sequence $\{a_n\}$ and $0\leq b_1,b_2,\ldots \leq p-1$ satisfying $a_1=\tilde{a}+b_1p^{M+1}$ and $a_n=a_{n-1}+b_np^{M+n}$ for all $n\geq2$. Now, set $a:=\tilde{a}+b_1p^{M+1}+b_2p^{M+2}+\cdots$. Then $a\equiv \tilde{a} \equiv a_0\pmod{p^{M+1}}$. Moreover, we have for each $n$ that
 \begin{align*}
-F(a) &\equiv F(\tilde{a}+b_1p^{M+1}+\cdots+b_np^{M+n}) \\
-&= F(\tilde{a}+(a_1-\tilde{a})+\cdots+(a_n-a_{n-1})) \\
-&= F(a_n) \equiv 0 \pmod{p^{M+1+n}}
+    F(a) &\equiv F(\tilde{a}+b_1p^{M+1}+\cdots+b_np^{M+n}) \\
+    &= F(\tilde{a}+(a_1-\tilde{a})+\cdots+(a_n-a_{n-1})) \\
+    &= F(a_n) \equiv 0 \pmod{p^{M+1+n}}
 \end{align*}
 This forces the $p$-adic number $F(a)=0$.
 
@@ -283,15 +284,15 @@ It's remaining to show the uniqueness. This is easy because we know $a$ is of th
 
 \subsection*{Exercise 1.7}
 
-We can use the process proved in Ex 1.6 to find roots of $F(x)\in\ZZ_p[x]$ in $\QQ_p$. We first pick a nice $M$ (to save our time) and an $a_0$ which satisfies the given three conditions. Next, put $\tilde{a}\equiv a_0 \pmod{p^{M+1}}$ where $0\leq \tilde{a} \leq p^{M+1}-1$. Set $a_1:=\tilde{a}+b_1p^{M+1}$ and $a_n:=a_{n-1}+b_np^{M+n}$. Then find $0\leq b_1,b_2,\ldots \leq p-1$ s.t. $F(a_n)\equiv 0\pmod{p^{2M+1+n}}$. Now, set $a:=\tilde{a}+b_1p^{M+1}+b_2p^{M+2}+\cdots$.
+We can use the process proved in Exercise 1.6 to find roots of $F(x)\in\ZZ_p[x]$ in $\QQ_p$. We first pick a nice $M$ (to save our time) and an $a_0$ which satisfies the given three conditions. Next, put $\tilde{a}\equiv a_0 \pmod{p^{M+1}}$ where $0\leq \tilde{a} \leq p^{M+1}-1$. Set $a_1:=\tilde{a}+b_1p^{M+1}$ and $a_n:=a_{n-1}+b_np^{M+n}$. Then find $0\leq b_1,b_2,\ldots \leq p-1$ s.t. $F(a_n)\equiv 0\pmod{p^{2M+1+n}}$. Now, set $a:=\tilde{a}+b_1p^{M+1}+b_2p^{M+2}+\cdots$.
 
 As an example, we find a sqaure root of $-7$ in $\QQ_2$, i.e., a root of $F(x):=x^2+7$. Pick $M=1$ and consider
 \begin{align*}
-\begin{cases*}
-2x\equiv 0 \pmod{2} \\
-2x\not\equiv 0 \pmod{2^2} \\
-x^2+7\equiv 0 \pmod{2^3}
-\end{cases*}
+    \begin{cases*}
+        2x\equiv 0 \pmod{2} \\
+        2x\not\equiv 0 \pmod{2^2} \\
+        x^2+7\equiv 0 \pmod{2^3}
+    \end{cases*}
 \end{align*}
 Choose $a_0=1$ and $\tilde{a}=1\equiv a_0 \pmod{2^{1+1}}$. So $a=1+b_1\cdot2^2+b_2\cdot2^3+b_3\cdot2^4+\cdots$.
 
@@ -305,7 +306,7 @@ Hence, $a=1+1\cdot2^2+1\cdot2^4+\cdots$, or $a=(\cdots10101)_2$, is a square roo
 
 \subsection*{Exercise 1.8}
 
-We use the criterion developed in Ex 1.11: Write $\alpha=a_{-m}p^{-m}+a_{-m+1}p^{-m+1}+\cdots$ as the $p$-adic expansion. If $m$ is odd, then $\alpha$ cannot be a square. Otherwise, we have $\alpha$ is a square in $\QQ_p$ iff $(a_{-m}/p)=1$.
+We use the criterion developed in Exercise 1.11: Write $\alpha=a_{-m}p^{-m}+a_{-m+1}p^{-m+1}+\cdots$ as the $p$-adic expansion. If $m$ is odd, then $\alpha$ cannot be a square. Otherwise, we have $\alpha$ is a square in $\QQ_p$ iff $(a_{-m}/p)=1$.
 
 Since the squares in $(\ZZ/11\ZZ)^\times$ are $1,4,9,5,3$, so we have the following: (i) $\bigcirc$ (ii) $\bigtimes$ (iii) $\bigcirc$ (iv) $\bigcirc$ (v) $\bigcirc$ (vi) $\bigtimes$ (vii) $\bigtimes$ (viii) $\bigtimes$ (ix) $\bigcirc$.
 
@@ -315,29 +316,29 @@ We use the basic version of Hensel's lemma (p. 16).
 
 For $\pm\sqrt{-1}$ in $\QQ_5$. Consider $F(x):=x^2+1\in\ZZ_5[x]$. A simple calculation shows that $a_0=2,3$. For $a_0=2$, we find that
 \begin{align*}
-F(a_1)&=(2+5b_1)^2+1\equiv 0\pmod{5^2} \implies b_1=1 \implies a_1=7 \\
-F(a_2)&=(7+5^2b_2)^2+1\equiv 0\pmod{5^3} \implies b_2=2 \implies a_2=57 \\
-F(a_3)&=(57+5^3b_3)^2+1\equiv 0\pmod{5^4} \implies b_3=1
+    F(a_1)&=(2+5b_1)^2+1\equiv 0\pmod{5^2} \implies b_1=1 \implies a_1=7 \\
+    F(a_2)&=(7+5^2b_2)^2+1\equiv 0\pmod{5^3} \implies b_2=2 \implies a_2=57 \\
+    F(a_3)&=(57+5^3b_3)^2+1\equiv 0\pmod{5^4} \implies b_3=1
 \end{align*}
 And for $a_0=3$, we find that
 \begin{align*}
-F(a_1)&=(3+5b_1)^2+1\equiv 0\pmod{5^2} \implies b_1=3 \implies a_1=18 \\
-F(a_2)&=(18+5^2b_2)^2+1\equiv 0\pmod{5^3} \implies b_2=2 \implies a_2=68 \\
-F(a_3)&=(68+5^3b_3)^2+1\equiv 0\pmod{5^4} \implies b_3=3
+    F(a_1)&=(3+5b_1)^2+1\equiv 0\pmod{5^2} \implies b_1=3 \implies a_1=18 \\
+    F(a_2)&=(18+5^2b_2)^2+1\equiv 0\pmod{5^3} \implies b_2=2 \implies a_2=68 \\
+    F(a_3)&=(68+5^3b_3)^2+1\equiv 0\pmod{5^4} \implies b_3=3
 \end{align*}
 So $\pm\sqrt{-1}=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots$ and $3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots$ in $\QQ_5$.
 
 For $\pm\sqrt{-3}$ in $\QQ_7$. Consider $G(x):=x^2+3\in\ZZ_7[x]$. A simple calculation shows that $a_0=2,5$. For $a_0=2$, we find that
 \begin{align*}
-G(a_1)&=(2+7b_1)^2+3\equiv 0\pmod{7^2} \implies b_1=5 \implies a_1=37 \\
-G(a_2)&=(37+7^2b_2)^2+3\equiv 0\pmod{7^3} \implies b_2=0 \implies a_2=37\\
-G(a_3)&=(37+7^3b_3)^2+3\equiv 0\pmod{7^4} \implies b_3=6
+    G(a_1)&=(2+7b_1)^2+3\equiv 0\pmod{7^2} \implies b_1=5 \implies a_1=37 \\
+    G(a_2)&=(37+7^2b_2)^2+3\equiv 0\pmod{7^3} \implies b_2=0 \implies a_2=37\\
+    G(a_3)&=(37+7^3b_3)^2+3\equiv 0\pmod{7^4} \implies b_3=6
 \end{align*}
 And for $a_0=5$, we find that
 \begin{align*}
-G(a_1)&=(5+7b_1)^2+3\equiv 0\pmod{7^2} \implies b_1=1 \implies a_1=12 \\
-G(a_2)&=(12+7^2b_2)^2+3\equiv 0\pmod{7^3} \implies b_2=6 \implies a_2=306 \\
-G(a_3)&=(306+7^3b_3)^2+3\equiv 0\pmod{7^4} \implies b_3=0
+    G(a_1)&=(5+7b_1)^2+3\equiv 0\pmod{7^2} \implies b_1=1 \implies a_1=12 \\
+    G(a_2)&=(12+7^2b_2)^2+3\equiv 0\pmod{7^3} \implies b_2=6 \implies a_2=306 \\
+    G(a_3)&=(306+7^3b_3)^2+3\equiv 0\pmod{7^4} \implies b_3=0
 \end{align*}
 So $\pm\sqrt{-3}=2+5\cdot7+0\cdot7^2+6\cdot7^3+\cdots$ and $5+1\cdot7+6\cdot7^2+0\cdot7^3+\cdots$ in $\QQ_7$.
 
@@ -345,9 +346,9 @@ So $\pm\sqrt{-3}=2+5\cdot7+0\cdot7^2+6\cdot7^3+\cdots$ and $5+1\cdot7+6\cdot7^2+
 
 From $1+p+p^2+\cdots=1/(1-p)$ we have $-1=(p-1)+(p-1)p+(p-1)p^2+\cdots$. We split $p$ into two cases.
 
-Case 1: $p$ is an odd prime. Then by the criterion stated in Ex 1.8 (proved in Ex 1.11), it's sufficient to find $p$ s.t. $((p-1)/p)=(-1/p)=1$, or equivalently, $p\equiv1\pmod{4}$. So we find that $p=5,13,17$.
+Case 1: $p$ is an odd prime. Then by the criterion stated in Exercise 1.8 (proved in Exercise 1.11), it's sufficient to find $p$ s.t. $((p-1)/p)=(-1/p)=1$, or equivalently, $p\equiv1\pmod{4}$. So we find that $p=5,13,17$.
 
-Case 2: $p=2$. Then by the criterion stated (and proved) in Ex 1.12, we see that $-1$ is not a square in $\QQ_2$.
+Case 2: $p=2$. Then by the criterion stated (and proved) in Exercise 1.12, we see that $-1$ is not a square in $\QQ_2$.
 
 \subsection*{Exercise 1.11}
 
@@ -361,18 +362,18 @@ In conclusion, the criterion is as follows: Write $\alpha=a_{-m}p^{-m}+a_{-m+1}p
 
 Now, let $0\neq\alpha\in\QQ_p$ be arbitrary. By considering the parities of $m$ and the values of $(a_{-m}/p)$, we see that there are four possibilities of $\alpha$. With this in mind, we take $1\leq b\leq p-1$ s.t. $(b/p)=-1$. And define these four numbers as $1,b,p,bp$. Then we have
 \begin{alignat*}{2}
-1\cdot\alpha &= a_{-m}p^{-m}+\cdots, &\qquad b\cdot\alpha &= ba_{-m}p^{-m}+\cdots \\
-p\cdot\alpha &= a_{-m}p^{-m+1}+\cdots, &\qquad bp\cdot\alpha &= ba_{-m}p^{-m+1}+\cdots
+    1\cdot\alpha &= a_{-m}p^{-m}+\cdots, &\qquad b\cdot\alpha &= ba_{-m}p^{-m}+\cdots \\
+    p\cdot\alpha &= a_{-m}p^{-m+1}+\cdots, &\qquad bp\cdot\alpha &= ba_{-m}p^{-m+1}+\cdots
 \end{alignat*}
 And the following table indicates which number is the only square in the given case:
 $$
 \def\arraystretch{1.2}
 \begin{array}{c|c|c}
- & (a_{-m}/p)=1 & (a_{-m}/p)=-1 \\
-\hline
-m \text{ is even} & 1\cdot\alpha & b\cdot\alpha \\
-\hline
-m \text{ is odd} & p\cdot\alpha & bp\cdot\alpha
+     & (a_{-m}/p)=1 & (a_{-m}/p)=-1 \\
+    \hline
+    m \text{ is even} & 1\cdot\alpha & b\cdot\alpha \\
+    \hline
+    m \text{ is odd} & p\cdot\alpha & bp\cdot\alpha
 \end{array}
 $$
 The idea is that we manipulate $\alpha$ to make its order even, and its first digit square mod $p$.
@@ -380,17 +381,17 @@ The idea is that we manipulate $\alpha$ to make its order even, and its first di
 \subsection*{Exercise 1.12}
 
 Let $\alpha\in\ZZ_2^\times$. We claim that $\alpha$ is a square in $\ZZ_2$ iff
-$\alpha\equiv 1\pmod{2^3}$. Suppose $\alpha=\beta^2$ where $\beta\in\ZZ_2$. Then $1=|\beta|_2^2$ and so $\beta\in\ZZ_2^\times$. Write $\beta=1+b_1\cdot2+b_2\cdot2^2+\cdots$ where $b_i\in\{0,1\}$. From this it's easy to check that $\alpha=\beta^2\equiv 1\pmod{2^3}$. Conversely, suppose $\alpha\equiv1\pmod{2^3}$. Consider $F(x):=x^2-\alpha\in\ZZ_2[x]$. Take $M=1$ in Ex 1.6, this means we need to solve
+$\alpha\equiv 1\pmod{2^3}$. Suppose $\alpha=\beta^2$ where $\beta\in\ZZ_2$. Then $1=|\beta|_2^2$ and so $\beta\in\ZZ_2^\times$. Write $\beta=1+b_1\cdot2+b_2\cdot2^2+\cdots$ where $b_i\in\{0,1\}$. From this it's easy to check that $\alpha=\beta^2\equiv 1\pmod{2^3}$. Conversely, suppose $\alpha\equiv1\pmod{2^3}$. Consider $F(x):=x^2-\alpha\in\ZZ_2[x]$. Take $M=1$ in Exercise 1.6, this means we need to solve
 $$
 \begin{cases*}
-2x \equiv0\pmod{2} \\
-2x \not\equiv0\pmod{2^2} \\
-x^2-\alpha \equiv x^2-1 \equiv0 \pmod{2^3} \\
+    2x \equiv0\pmod{2} \\
+    2x \not\equiv0\pmod{2^2} \\
+    x^2-\alpha \equiv x^2-1 \equiv0 \pmod{2^3} \\
 \end{cases*}
 $$
-Clearly $a=1$ works. So by Ex 1.6, $\exists x_0\in\ZZ_2$ s.t. $F(x_0)=0$, i.e., $\alpha=x_0^2$.
+Clearly $a=1$ works. So by Exercise 1.6, $\exists x_0\in\ZZ_2$ s.t. $F(x_0)=0$, i.e., $\alpha=x_0^2$.
 
-If $|\alpha|_2\neq 1$, then the analysis is similar to Ex 1.11. If $\ord_2(\alpha)$ is odd, then $\alpha$ is not a square. Suppose we know $\ord_2(\alpha)$ is even. Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$ where $a_i\in\{0,1\}$. Consider $2^m\alpha =1+a_{-m+1}\cdot2+\cdots \in\ZZ_2^\times$. Now, apply the criterion for numbers in $\ZZ_2^\times$, we have that $2^m\alpha$ is a square in $\ZZ_2$ iff $2^m\alpha\equiv 1 \pmod{2^3}$, or equivalently, $a_{-m+1}=a_{-m+2}=0$. On the other hand, observe that $2^m\alpha$ is a square in $\ZZ_2$ is also equivalent to say $\alpha$ is a square in $\QQ_2$.
+If $|\alpha|_2\neq 1$, then the analysis is similar to Exercise 1.11. If $\ord_2(\alpha)$ is odd, then $\alpha$ is not a square. Suppose we know $\ord_2(\alpha)$ is even. Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$ where $a_i\in\{0,1\}$. Consider $2^m\alpha =1+a_{-m+1}\cdot2+\cdots \in\ZZ_2^\times$. Now, apply the criterion for numbers in $\ZZ_2^\times$, we have that $2^m\alpha$ is a square in $\ZZ_2$ iff $2^m\alpha\equiv 1 \pmod{2^3}$, or equivalently, $a_{-m+1}=a_{-m+2}=0$. On the other hand, observe that $2^m\alpha$ is a square in $\ZZ_2$ is also equivalent to say $\alpha$ is a square in $\QQ_2$.
 
 In conclusion, the criterion is as follows: Write $\alpha=1\cdot2^{-m}+a_{-m+1}\cdot2^{-m+1}+\cdots$. If $m$ is odd, then $\alpha$ cannot be a square. Otherwise, we have $\alpha$ is a square in $\QQ_2$ iff $a_{-m+1}=a_{-m+2}=0$.
 
@@ -398,31 +399,31 @@ Now, let $0\neq\alpha\in\QQ_2$ be arbitrary. By considering the parities of $m$ 
 $$
 \def\arraystretch{1.2}
 \begin{array}{c|c|c}
-m \text{ is even} & a_{-m+1}=0 & a_{-m+1}=1 \\
-\hline
-a_{-m+2}=0 & 1\cdot\alpha & (1+2)\cdot\alpha \\
-\hline
-a_{-m+2}=1 & (1+2^2)\cdot\alpha & (1+2+2^2)\cdot\alpha
+    m \text{ is even} & a_{-m+1}=0 & a_{-m+1}=1 \\
+    \hline
+    a_{-m+2}=0 & 1\cdot\alpha & (1+2)\cdot\alpha \\
+    \hline
+    a_{-m+2}=1 & (1+2^2)\cdot\alpha & (1+2+2^2)\cdot\alpha
 \end{array}
 \quad
 \begin{array}{c|c|c}
-m \text{ is odd} & a_{-m+1}=0 & a_{-m+1}=1 \\
-\hline
-a_{-m+2}=0 & 2\cdot\alpha & (1+2)2\cdot\alpha \\
-\hline
-a_{-m+2}=1 & (1+2^2)2\cdot\alpha & (1+2+2^2)2\cdot\alpha
+    m \text{ is odd} & a_{-m+1}=0 & a_{-m+1}=1 \\
+    \hline
+    a_{-m+2}=0 & 2\cdot\alpha & (1+2)2\cdot\alpha \\
+    \hline
+    a_{-m+2}=1 & (1+2^2)2\cdot\alpha & (1+2+2^2)2\cdot\alpha
 \end{array}
 $$
 The idea is that we manipulate $\alpha$ to make its order even, and the second and the third digits zero.
 
 \subsection*{Exercise 1.13}
 
-Recall that the set of fourth roots of one forms a cyclic group generated by the complex numbers $\pm\sqrt{-1}$. So in order to find their $5$-adic expansions, we first find the $5$-adic expansions of $\pm\sqrt{-1}$, and generate the other three. More precisely, the $5$-adic expansions of $\pm\sqrt{-1}$ has already been found in Ex 1.9. $\pm\sqrt{-1}=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots$ and $3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots$. We pick the former one to be the generator, denoted by $x$. Then the 4 fourth roots of one are
+Recall that the set of fourth roots of one forms a cyclic group generated by the complex numbers $\pm\sqrt{-1}$. So in order to find their $5$-adic expansions, we first find the $5$-adic expansions of $\pm\sqrt{-1}$, and generate the other three. More precisely, the $5$-adic expansions of $\pm\sqrt{-1}$ has already been found in Exercise 1.9. $\pm\sqrt{-1}=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots$ and $3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots$. We pick the former one to be the generator, denoted by $x$. Then the 4 fourth roots of one are
 \begin{alignat*}{2}
-x&=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots &\qquad
-x^2&=4+4\cdot5+4\cdot5^2+4\cdot5^3+\cdots = -1\\
-x^3&=3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots &\qquad
-x^4&=1+0\cdot5+0\cdot5^2+0\cdot5^3+\cdots = 1
+    x&=2+1\cdot5+2\cdot5^2+1\cdot5^3+\cdots &\qquad
+    x^2&=4+4\cdot5+4\cdot5^2+4\cdot5^3+\cdots = -1\\
+    x^3&=3+3\cdot5+2\cdot5^2+3\cdot5^3+\cdots &\qquad
+    x^4&=1+0\cdot5+0\cdot5^2+0\cdot5^3+\cdots = 1
 \end{alignat*}
 
 Let $F(x):=x^p-x\in\ZZ_p[x]$. We see that the numbers $0,1,2,\ldots,p-1\in\ZZ_p$ all satisfy $F(x)\equiv0\pmod{p}$ by Fermat's little theorem and $F'(x)\equiv-1\not\equiv0\pmod{p}$. So by Hensel's lemma (p. 16), $\exu a_i\in\ZZ_p$ s.t. $F(a_i)=0$ and $a_i\equiv i\pmod{p}$, $i=0,1,\ldots,p-1$.
@@ -433,7 +434,7 @@ Let $F(x):=x^p-x\in\ZZ_p[x]$. We see that the numbers $0,1,2,\ldots,p-1\in\ZZ_p$
 
 Assume $p>2$. It's sufficient to show that $f(x):=(x^p-1)/(x-1)$ is irreducible in $\QQ_p[x]$. To apply Eisenstein's criterion, we consider $$g(x):=f(x+1)=\frac{(x+1)^p-1}{x}=x^{p-1}+\binom{p}{1}x^{p-2}+\cdots+\binom{p}{p-2}x+\binom{p}{p-1}$$
 
-Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1\not\equiv 0\pmod{p}$ and (3) $\binom{p}{p-1}=p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Ex 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. Consequently, so is $f(x)$. (Otherwise, if $f(x)=f_1(x)f_2(x)$ is reducible, where $1\leq \deg f_1(x),\deg f_2(x) < \deg f(x)$, then so is $g(x)=f(x+1)=f_1(x+1)f_2(x+1)$, which is absurd.)
+Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1\not\equiv 0\pmod{p}$ and (3) $\binom{p}{p-1}=p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Exercise 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. Consequently, so is $f(x)$. (Otherwise, if $f(x)=f_1(x)f_2(x)$ is reducible, where $1\leq \deg f_1(x),\deg f_2(x) < \deg f(x)$, then so is $g(x)=f(x+1)=f_1(x+1)f_2(x+1)$, which is absurd.)
 
 \subsection*{Exercise 1.16}
 
@@ -451,58 +452,58 @@ For positive $n$, we consider $F(x):=x^n-\alpha\in\ZZ_p[x]$ and show that $F(x)$
 
 For negative $n$, we consider $F(x):=\alpha x^{-n}-1\in\ZZ_p[x]$ and show that $F(x)$ has a root in $\ZZ_p$. Put $a_0=1$, then $F(a_0)=\alpha-1\equiv 0\pmod{p}$ and $F'(a_0)=-n\alpha\not\equiv 0\pmod{p}$. So by Hensel's lemma again, $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
 
-Now, suppose $n=p$. Set $\alpha=1+p\equiv1\pmod{p}$. We claim that $x^p-\alpha$ has no solutions in $\QQ_p$, or equivalently, $f(x):=x^p-\alpha$ is irreducible in $\QQ_p[x]$. Using the same idea as in Ex 1.15, we consider $$g(x):=f(x+1)=(x+1)^p-\alpha = x^p+\binom{p}{1}x^{p-1}+\cdots+\binom{p}{p-1}x+1-\alpha$$
+Now, suppose $n=p$. Set $\alpha=1+p\equiv1\pmod{p}$. We claim that $x^p-\alpha$ has no solutions in $\QQ_p$, or equivalently, $f(x):=x^p-\alpha$ is irreducible in $\QQ_p[x]$. Using the same idea as in Exercise 1.15, we consider $$g(x):=f(x+1)=(x+1)^p-\alpha = x^p+\binom{p}{1}x^{p-1}+\cdots+\binom{p}{p-1}x+1-\alpha$$
 
-Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1-\alpha\equiv 0\pmod{p}$ (3) $1\not\equiv 0\pmod{p}$ and (4) $1-\alpha=-p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Ex 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. And hence, so is $f(x)$.
+Note that we have (1) $\binom{p}{i}\equiv 0\pmod{p}$ for $i=1,2,\ldots,p-1$ (2) $1-\alpha\equiv 0\pmod{p}$ (3) $1\not\equiv 0\pmod{p}$ and (4) $1-\alpha=-p\not\equiv0\pmod{p^2}$. So by Eisenstein's criterion (Exercise 1.14), $g(x)$ is irreducible in $\QQ_p[x]$. And hence, so is $f(x)$.
 
-Finally, suppose $\alpha\equiv1\pmod{p^2}$ and $p\neq2$. We claim that $F(x):=x^p-\alpha$ has a solution in $\QQ_p$. Take $M=1$ in Ex 1.6, this means we need to solve
+Finally, suppose $\alpha\equiv1\pmod{p^2}$ and $p\neq2$. We claim that $F(x):=x^p-\alpha$ has a solution in $\QQ_p$. Take $M=1$ in Exercise 1.6, this means we need to solve
 $$
 \begin{cases*}
-px^{p-1} \equiv0\pmod{p} \\
-px^{p-1} \not\equiv0\pmod{p^2} \\
-x^p-\alpha \equiv0 \pmod{p^3} \\
+    px^{p-1} \equiv0\pmod{p} \\
+    px^{p-1} \not\equiv0\pmod{p^2} \\
+    x^p-\alpha \equiv0 \pmod{p^3} \\
 \end{cases*}
 $$
-Write $\alpha=1+0\cdot p+a_2p^2+\cdots$. Then it's easy to check that $a_0:=1+a_2p\in\ZZ_p$ works. (One may observe that $\alpha\equiv 1+a_2p^2\pmod{p^3}$.) So By Ex 1.6, $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
+Write $\alpha=1+0\cdot p+a_2p^2+\cdots$. Then it's easy to check that $a_0:=1+a_2p\in\ZZ_p$ works. (One may observe that $\alpha\equiv 1+a_2p^2\pmod{p^3}$.) So By Exercise 1.6, $\exists a\in\ZZ_p$ s.t. $F(a)=0$.
 
 \subsection*{Exercise 1.19}
 
 Induction on $M$. When $M=1$, we have $\alpha^p\equiv\alpha\pmod{p}$ by Fermat's little theorem. Suppose now $\alpha^{p^M}\equiv\alpha^{p^{M-1}} \pmod{p^M}$, we want to show that $\alpha^{p^{M+1}}\equiv\alpha^{p^M} \pmod{p^{M+1}}$. Consider
 \begin{align*}
-\alpha^{p^{M+1}}-\alpha^{p^M} &= \left(\alpha^{p^M}\right)^p - \left(\alpha^{p^{M-1}}\right)^p \\
-&= \left(\alpha^{p^M}-\alpha^{p^{M-1}}\right)\cdot \left(\sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i\right)
+    \alpha^{p^{M+1}}-\alpha^{p^M} &= \left(\alpha^{p^M}\right)^p - \left(\alpha^{p^{M-1}}\right)^p \\
+    &= \left(\alpha^{p^M}-\alpha^{p^{M-1}}\right)\cdot \left(\sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i\right)
 \end{align*}
 We know $p^M\mid\alpha^{p^M}-\alpha^{p^{M-1}}$ by the induction hypothesis. So it's sufficient to show that $p$ divides that sum. Observe that we have $\alpha\equiv\alpha^p\equiv\alpha^{p^2}\equiv\cdots\equiv\alpha^{p^M} \pmod{p}$. So
 \begin{align*}
-\sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i \equiv \sum_{i=0}^{p-1} \alpha^{p-1-i}\cdot\alpha^i = \sum_{i=0}^{p-1} \alpha^{p-1} = p\alpha^{p-1} \equiv 0 \pmod{p}
+    \sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i \equiv \sum_{i=0}^{p-1} \alpha^{p-1-i}\cdot\alpha^i = \sum_{i=0}^{p-1} \alpha^{p-1} = p\alpha^{p-1} \equiv 0 \pmod{p}
 \end{align*}
 
 We next show that $\{a_M\}_{M=1}^\infty:=\{\alpha^{p^M}\}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $1/p^N<\epsilon$. If $n>m\geq N$, we have
 \begin{align*}
-\left|\alpha^{p^n}-\alpha^{p^m}\right|_p &\leq \max\left\{ \left|\alpha^{p^n}-\alpha^{p^{n-1}}\right|_p,\ldots,\left|\alpha^{p^{m+1}}-\alpha^{p^m}\right|_p \right\} \\
-&\leq \max \left\{ \frac{1}{p^n},\ldots,\frac{1}{p^{m+1}} \right\} = \frac{1}{p^{m+1}} < \frac{1}{p^N} <\epsilon
+    \left|\alpha^{p^n}-\alpha^{p^m}\right|_p &\leq \max\left\{ \left|\alpha^{p^n}-\alpha^{p^{n-1}}\right|_p,\ldots,\left|\alpha^{p^{m+1}}-\alpha^{p^m}\right|_p \right\} \\
+    &\leq \max \left\{ \frac{1}{p^n},\ldots,\frac{1}{p^{m+1}} \right\} = \frac{1}{p^{m+1}} < \frac{1}{p^N} <\epsilon
 \end{align*}
 Since $\QQ_p$ is complete, so the sequence $\{a_M\}$ converges to a limit, say $a$, in $\QQ_p$.
 
-Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$. (See Ex 1.13.) From $a_{M-1}^p = (\alpha^{p^{M-1}})^p= \alpha^{p^M} \equiv \alpha^{p^{M-1}} = a_{M-1} \pmod{p^M}$, we have $|a_{M-1}^p-a_{M-1}|_p\leq 1/p^M$. Let $M\to\infty$, we obtain $|a^p-a|_p\leq 0$ and so $a^p=a$. Moreover, from $a_M = \alpha^{p^M} \equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Let $M\to\infty$, we obtain $|a-\alpha|_p\leq 1/p$ and so $a\equiv\alpha\pmod{p}$.
+Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$. (See Exercise 1.13.) From $a_{M-1}^p = (\alpha^{p^{M-1}})^p= \alpha^{p^M} \equiv \alpha^{p^{M-1}} = a_{M-1} \pmod{p^M}$, we have $|a_{M-1}^p-a_{M-1}|_p\leq 1/p^M$. Let $M\to\infty$, we obtain $|a^p-a|_p\leq 0$ and so $a^p=a$. Moreover, from $a_M = \alpha^{p^M} \equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Let $M\to\infty$, we obtain $|a-\alpha|_p\leq 1/p$ and so $a\equiv\alpha\pmod{p}$.
 
 \subsection*{Exercise 1.20}
 
-This can be done by using the same idea as in Ex 1.19 in \S2 (p. 8), we skip the details.
+This can be done by using the same idea as in Exercise 1.19 in \S2 (p. 8), we skip the details.
 
 \subsection*{Exercise 1.21}
 
 \subsection*{Bonus 1.2} \label{Bonus 1.2}
 
-We give another proof of Ex 1.6 (p. 19), which is an analog of Newton's method.
+We give another proof of Exercise 1.6 (p. 19), which is an analog of Newton's method.
 
 The given three conditions imply $\ord_p(F'(a_0))=M$ and $\ord_p(F(a_0))>2M$. This means $\ord_p(F(a_0)/F'(a_0))>M$ and so $F(a_0)/F'(a_0)\in\ZZ_p$. Put $a_1:=a_0-F(a_0)/F'(a_0)\in\ZZ_p$. We claim that $\ord_p(F'(a_1))=M$ and $\ord_p(F(a_1))>\ord_p(F(a_0))$.
 
 From $\ord_p(F(a_0)/F'(a_0))>M$ we know $a_1\equiv a_0 \pmod{p^{M+1}}$. So $F'(a_1)\equiv F'(a_0)\equiv0\pmod{p^M}$ and $F'(a_1)\equiv F'(a_0)\not\equiv0\pmod{p^{M+1}}$. This implies $\ord_p(F'(a_1))=M$. Moreover, assume $e_0:=\ord_p(F(a_0))>2M$ and $F(x)=\sum c_ix^i$. Then $\ord_p(F(a_0)/F'(a_0))=e_0-M$ and
 \begin{align*}
-F(a_1) &= \sum c_i\left(a_0-\frac{F(a_0)}{F'(a_0)}\right)^i = \sum c_i\left(a_0^i - ia_0^{i-1}\frac{F(a_0)}{F'(a_0)}+\jk\right) \\
-&\equiv \sum c_i\left(a_0^i - ia_0^{i-1}\frac{F(a_0)}{F'(a_0)}\right) \\
-&= F(a_0) - F'(a_0)\cdot\frac{F(a_0)}{F'(a_0)} = 0 \pmod{p^{2(e_0-M)}}
+    F(a_1) &= \sum c_i\left(a_0-\frac{F(a_0)}{F'(a_0)}\right)^i = \sum c_i\left(a_0^i - ia_0^{i-1}\frac{F(a_0)}{F'(a_0)}+\jk\right) \\
+    &\equiv \sum c_i\left(a_0^i - ia_0^{i-1}\frac{F(a_0)}{F'(a_0)}\right) \\
+    &= F(a_0) - F'(a_0)\cdot\frac{F(a_0)}{F'(a_0)} = 0 \pmod{p^{2(e_0-M)}}
 \end{align*}
 This implies $\ord_p(F(a_1)) \geq 2(e_0-M) > e_0 = \ord_p(F(a_0)) > 2M$. Note that the second inequality holds because $e_0>2M$.
 
@@ -511,17 +512,17 @@ Inductively, suppose we have obtained $a_k\in\ZZ_p$ satisfies (1) $a_k\equiv a_{
 Hence, we obtain a sequence $\{a_n\}_{n=0}^\infty\subset\ZZ_p$ s.t. for each $n$, $a_n\equiv a_0 \pmod{p^{M+1}}$, $\ord_p(F'(a_n))=M$, and $e_n:=\ord_p(F(a_n))$ is strictly increasing.
 This means $\lim_{n\to\infty} e_n=\infty$ and so $\lim_{n\to\infty} |F(a_n)|_p=0$. We claim that $\{a_n\}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $p^{M-e_N}<\epsilon$. If $m>n\geq N$, then
 \begin{align*}
-|a_m-a_n|_p &\leq \max\{|a_m-a_{m-1}|_p,\ldots,|a_{n+1}-a_n|_p\} \\
-&= \max\left\{ \left|-\frac{F(a_{m-1})}{F'(a_{m-1})}\right|_p ,\ldots, \left|-\frac{F(a_n)}{F'(a_n)}\right|_p \right\} \\
-&= \max\{ p^{M-e_{m-1}},\ldots,p^{M-e_n} \} = p^{M-e_n} \leq p^{M-e_N} < \epsilon
+    |a_m-a_n|_p &\leq \max\{|a_m-a_{m-1}|_p,\ldots,|a_{n+1}-a_n|_p\} \\
+    &= \max\left\{ \left|-\frac{F(a_{m-1})}{F'(a_{m-1})}\right|_p ,\ldots, \left|-\frac{F(a_n)}{F'(a_n)}\right|_p \right\} \\
+    &= \max\{ p^{M-e_{m-1}},\ldots,p^{M-e_n} \} = p^{M-e_n} \leq p^{M-e_N} < \epsilon
 \end{align*}
 
 Since $\QQ_p$ is complete, we set $a:=\lim_{n\to\infty}a_n\in\ZZ_p$. Then $F(a)=F\left(\lim_{n\to\infty} a_n\right) = \lim_{n\to\infty} F(a_n) = 0$. Moreover, from $a_n\equiv a_0 \pmod{p^{M+1}}$ for all $n$, it's obvious that $a\equiv a_0 \pmod{p^{M+1}}$.
 
 It's remaining to show that $a$ is unique. Suppose $\exists b\neq a$ in $\ZZ_p$ also satisfies $F(b)=0$ and $b\equiv a_0\equiv a\pmod{p^{M+1}}$. Write $b=a+c$ where $0\neq c\in\ZZ_p$, then
 \begin{align*}
-0 &= F(b) = \sum c_i(a+c)^i = \sum c_i(a^i + ia^{i-1}c + c^2 \cdot\jk) \\
-&= F(a) + F'(a)c + g(a,c)c^2 = F'(a)c + g(a,c)c^2
+    0 &= F(b) = \sum c_i(a+c)^i = \sum c_i(a^i + ia^{i-1}c + c^2 \cdot\jk) \\
+    &= F(a) + F'(a)c + g(a,c)c^2 = F'(a)c + g(a,c)c^2
 \end{align*}
 where $g(x,y)\in\ZZ_p[x,y]$. So $F'(a)=-g(a,c)\cdot c$ and hence $$\frac{1}{p^M} = \left|F'(a)\right|_p = |-g(a,c)\cdot c|_p \leq |c|_p = |b-a|_p \leq \frac{1}{p^{M+1}}$$ This leads to a contradiction. (The first equality comes from $\ord_p(F'(a_n))=M$ for all $n$.)
 
