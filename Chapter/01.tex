@@ -234,7 +234,7 @@ $(\Leftarrow)$ Let $a=b/p^k$ where $b\in\NN$. Write $b$ to the base $p$, $b=\sum
 
 $(\Rightarrow)$ Suppose $|a|_p=1/p^m$, $m\in\ZZ$. Write $$ap^m=\jk+\sum_{t=0}^\infty \left(\sum_{s=1}^r a_{N+s}p^{N+s+tr}\right)$$ where $\jk=a_0+a_1p+\cdots+a_Np^N\in\NN$ is the non-repeating part. So we have $$a = \frac{\jk}{p^m}+\frac{\sum_{s=1}^r a_{N+s}p^{N+s}}{(1-p^r)p^m}\in\QQ$$
 
-$(\Leftarrow)$ Write $a=a'/b'$ where $\gcd(a',b')=1$. In view of Exercise 1.1, we may assume $a',b'>0$. We can also assume $p\nmid b'$ because the multiplications of $p$ powers preserve the "repeating digits property". Now, let $q_{i-1}=pq_i+r_i$ where $q_0:=a'/b',q_i\in\ZZ_p$ and $r_i=0,1,\ldots,p-1$. It's sufficient to show that $q_i=q_j$ for some $i\neq j$.  (See Exercise 1.2 (iv) above.)
+$(\Leftarrow)$ Write $a=a'/b'$ where $\gcd(a',b')=1$. In view of Exercise 1.1, we may assume $a',b'>0$. We can also assume $p\nmid b'$ because the multiplications of $p$ powers preserve the "repeating digits property". Now, let $q_{i-1}=pq_i+r_i$ where $q_0:=a'/b',q_i\in\ZZ_p$ and $r_i=0,1,\ldots,p-1$. It's sufficient to show that $q_i=q_j$ for some $i\neq j$ (see Exercise 1.2 (iv) above).
 
 We first claim by induction on $i$ that the denominator of $q_i$ is always $b'$ if we write $q_i$ in the lowest terms. When $i=1$, we have $a'/b'=pq_1+r_1$, so $q_1=(a'-r_1b')/pb'$. We know $\alpha_1:=(a'-r_1b')/p\in\ZZ$ because $q_1\in\ZZ_p$. And since $\gcd(a',b')=1$, so is $\gcd(\alpha_1,b')$. So $q_1=\alpha_1/b'$ is in lowest terms.
 
@@ -473,23 +473,23 @@ Induction on $M$. When $M=1$, we have $\alpha^p\equiv\alpha\pmod{p}$ by Fermat's
     \alpha^{p^{M+1}}-\alpha^{p^M} &= \left(\alpha^{p^M}\right)^p - \left(\alpha^{p^{M-1}}\right)^p \\
     &= \left(\alpha^{p^M}-\alpha^{p^{M-1}}\right)\cdot \left(\sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i\right)
 \end{align*}
-We know $p^M\mid\alpha^{p^M}-\alpha^{p^{M-1}}$ by the induction hypothesis. So it's sufficient to show that $p$ divides that sum. Observe that we have $\alpha\equiv\alpha^p\equiv\alpha^{p^2}\equiv\cdots\equiv\alpha^{p^M} \pmod{p}$. So
+We know $p^M\mid\alpha^{p^M}-\alpha^{p^{M-1}}$ by the induction hypothesis. So it's sufficient to show that $p$ divides that sum. Observe that $\alpha\equiv\alpha^p\equiv\alpha^{p^2}\equiv\cdots\equiv\alpha^{p^M} \pmod{p}$, so
 \begin{align*}
     \sum_{i=0}^{p-1} \left(\alpha^{p^M}\right)^{p-1-i}\left(\alpha^{p^{M-1}}\right)^i \equiv \sum_{i=0}^{p-1} \alpha^{p-1-i}\cdot\alpha^i = \sum_{i=0}^{p-1} \alpha^{p-1} = p\alpha^{p-1} \equiv 0 \pmod{p}
 \end{align*}
 
-We next show that $\{a_M\}_{M=1}^\infty:=\{\alpha^{p^M}\}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $1/p^N<\epsilon$. If $n>m\geq N$, we have
+We next show that $\{a_M\}_{M=1}^\infty:=\{\alpha^{p^M}\}$ is Cauchy in $\QQ_p$. Given $\epsilon>0$, take $N$ large enough s.t. $1/p^N<\epsilon$. Then for $n>m\geq N$, we have
 \begin{align*}
     \left|\alpha^{p^n}-\alpha^{p^m}\right|_p &\leq \max\left\{ \left|\alpha^{p^n}-\alpha^{p^{n-1}}\right|_p,\ldots,\left|\alpha^{p^{m+1}}-\alpha^{p^m}\right|_p \right\} \\
     &\leq \max \left\{ \frac{1}{p^n},\ldots,\frac{1}{p^{m+1}} \right\} = \frac{1}{p^{m+1}} < \frac{1}{p^N} <\epsilon
 \end{align*}
 Since $\QQ_p$ is complete, so the sequence $\{a_M\}$ converges to a limit, say $a$, in $\QQ_p$.
 
-Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$. (See Exercise 1.13.) From $a_{M-1}^p = (\alpha^{p^{M-1}})^p= \alpha^{p^M} \equiv \alpha^{p^{M-1}} = a_{M-1} \pmod{p^M}$, we have $|a_{M-1}^p-a_{M-1}|_p\leq 1/p^M$. Let $M\to\infty$, we obtain $|a^p-a|_p\leq 0$ and so $a^p=a$. Moreover, from $a_M = \alpha^{p^M} \equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Let $M\to\infty$, we obtain $|a-\alpha|_p\leq 1/p$ and so $a\equiv\alpha\pmod{p}$.
+Finally, we show that $a$ satisfies $a^p=a$ and $a\equiv\alpha\pmod{p}$ (see Exercise 1.13). From $a_{M-1}^p = (\alpha^{p^{M-1}})^p= \alpha^{p^M} \equiv \alpha^{p^{M-1}} = a_{M-1} \pmod{p^M}$, we have $|a_{M-1}^p-a_{M-1}|_p\leq 1/p^M$. Letting $M\to\infty$, we obtain $|a^p-a|_p\leq 0$ and so $a^p=a$. Moreover, from $a_M = \alpha^{p^M} \equiv\alpha\pmod{p}$ for each $M$, we have $|a_M-\alpha|_p\leq 1/p$. Letting, $M\to\infty$ we obtain $|a-\alpha|_p\leq 1/p$ and so $a\equiv\alpha\pmod{p}$.
 
 \subsection*{Exercise 1.20}
 
-This can be done by using the same idea as in Exercise 1.19 in \S2 (p. 8), we skip the details.
+This can be done by using the same idea as in Exercise 1.19 in \S2 (p. 8). We skip the details.
 
 \subsection*{Exercise 1.21}
 
